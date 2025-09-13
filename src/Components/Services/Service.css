@@ -1,0 +1,87 @@
+.services-title {
+    text-align: center;
+    position: relative;
+    
+}
+.services-title h1{
+    padding: 0 30px;
+    font-size: 80px;
+    font-weight: 700;
+    background: linear-gradient(90deg, #a8ff78 0%, #8f94fb 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    color: transparent;
+    letter-spacing: 2px;
+    margin-bottom: 0;
+}
+.services-title p{
+    font-size: 20px;
+    font-weight: 500;
+    color: #a0a0a0;
+    line-height: 1.6;
+    margin-top: 10px;
+}
+.services-cards {
+    display: flex;
+    gap: 32px;
+    justify-content: center;
+    margin-top: 40px;
+    flex-wrap: wrap;
+}
+
+.services-card {
+    background: #8f94fb;
+    border-radius: 18px;
+    box-shadow: 0 4px 24px 0 rgba(0,0,0,0.10);
+    padding: 28px 28px;
+    width: 320px;
+    min-height: 260px;
+    display: flex;
+    flex-direction: column;
+    gap: 18px;
+    position: relative;
+    transition: transform 0.2s, box-shadow 0.2s;
+}
+.services-card::before{
+    position: absolute;
+    content: " ";
+    height: 100%;
+    width: 100%;
+    top: 0;
+    left: 0;
+    border-radius: 10px;
+    background: #a8ff78;
+    transform: rotate(0deg);
+    z-index: -1;
+}
+
+.services-card:hover {
+    transform: rotate(10deg) scale(1.05);
+    box-shadow: 0 8px 32px 0 rgba(168,255,120,0.15), 0 4px 24px 0 rgba(143,148,251,0.10);
+}
+
+.services-card i {
+
+    font-size: 50px;
+    background: linear-gradient(90deg, #a8ff78 0%, #8f94fb 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    color: transparent;
+    margin-bottom: 8px;
+}
+
+.services-card h2 {
+    font-size: 1.4rem;
+    font-weight: 700;
+    color: #0c0000;
+    margin-bottom: 6px;
+}
+
+.service-card p {
+    color: #a0a0a0;
+    font-size: 1rem;
+    font-weight: 400;
+    margin-bottom: 0;
+}
