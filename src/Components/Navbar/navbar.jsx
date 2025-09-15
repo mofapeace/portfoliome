@@ -1,18 +1,18 @@
 import React from 'react'
 import './navbar.css'
 import Logo from '../../../src/assets/logo.jpg'
+import AnchorLink from 'react-anchor-link-smooth-scroll'
 
 const Navbar = () => {
 
-//const [menu, setMenu] = useState("home")
   return (
-    <div className='navbar'>
+    <div  className='navbar'>
         <img src={Logo} alt="" />
         <ul className="nav-menu">
-            <li>Home</li>
-            <li>About Me</li>
-            <li>Services</li>
-            <li>Contact</li>
+            <li><AnchorLink className='a-link' href="#home">Home</AnchorLink></li>
+            <li><AnchorLink className='a-link' offset={50} href="#about">About Me</AnchorLink></li>
+            <li><AnchorLink className='a-link' offset={50} href="#services">Services</AnchorLink></li>
+            <li><AnchorLink className='a-link' offset={50} href="#contact">Contact</AnchorLink></li>
         </ul>
         <div className="nav-connect">Connect with me</div>
     </div>

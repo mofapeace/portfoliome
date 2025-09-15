@@ -3,7 +3,7 @@ import './About.css'
 import profileImg from '../../assets/About-profile.jpg'
 const About = () => {
   return (
-    <div className='about'>
+    <div id='about' className='about'>
         <div className="about-title">
             <h1>About me</h1>
         </div>
