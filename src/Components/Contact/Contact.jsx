@@ -2,6 +2,30 @@ import React from 'react'
 import './Contact.css/'
 
 const Contact = () => {
+
+    const onSubmit = async (event) => {
+    event.preventDefault();
+    const formData = new FormData(event.target);
+
+    formData.append("access_key", "abb298e6-c135-4e3f-8def-1a5bebc881e1");
+
+    const object = Object.fromEntries(formData);
+    const json = JSON.stringify(object);
+
+    const res = await fetch("https://api.web3forms.com/submit", {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+        Accept: "application/json"
+      },
+      body: json
+    }).then((res) => res.json());
+
+    if (res.success) {
+      alert(res.message);
+    }
+  };
+
   return (
     <div id='contact' className='Contact'>
         <div className="Contact-title">
@@ -23,7 +47,7 @@ const Contact = () => {
                     </div>
                 </div>
             </div>
-            <form className="Contact-right">
+            <form onSubmit={onSubmit} className="Contact-right">
                 <label htmlFor="">Your Name</label>
                 <input type="text" placeholder='Enter Your Name' name='name'/>
                 <label htmlFor="">Your Email</label>

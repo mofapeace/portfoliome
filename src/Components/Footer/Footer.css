@@ -75,3 +75,31 @@
 .email-input{
     border: 2px solid white;
 }
+@media (max-width: 768px) {
+    .Footer{
+        margin: 20px 70px;
+    }
+    .Footer-top{
+        flex-direction: column;
+        gap: 30px;
+    }
+    .top-right{
+        flex-direction: column;
+        width: 100%;
+        gap: 20px;
+    }
+    .email-input{
+        width: 100%;
+        padding-right: 20px;
+    }
+    .bottom-left{
+        flex-direction: column;
+        gap: 20px;
+    }
+    .Footer-bottom{
+        display: flex;
+        flex-direction: column-reverse;
+        gap: 20px;
+        align-items: start;
+    }
+}

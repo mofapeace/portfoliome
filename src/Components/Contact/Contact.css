@@ -96,3 +96,34 @@
     transform: scale(1.05);
     transition: 0.3s;
 }
+@media (max-width: 768px){
+    .Contact{
+        gap: 50px;
+        margin: 40px 20px;
+        align-items: start;
+    }
+    .Contact-title h1{
+        padding: 0;
+        font-size: 50px;
+        font-weight: 600;
+    }
+    .Contact-section{
+        flex-direction: column;
+        gap: 50px;
+    }
+    .Contact-left h1{
+        font-size: 50px;
+    }
+    .Contact-left p{
+        font-size: 16px;
+    }
+    .Contact-details{
+        font-size: 24px;
+        gap: 20px;
+    }
+    .Contact-right input, .Contact-right textarea{
+        width: 100%;
+        font-size: 16px;
+
+    }
+}
