@@ -75,7 +75,7 @@
 .email-input{
     border: 2px solid white;
 }
-@media (max-width: 768px) {
+@media (max-width: 1080px) {
     .Footer{
         margin: 20px 70px;
     }

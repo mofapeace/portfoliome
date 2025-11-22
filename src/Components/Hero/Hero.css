@@ -6,9 +6,9 @@
 }
 
 .hero img {
-    width: 250px;  
-    height: 250px;
-    margin-top: 150px;
+    width: 100px;  
+    height: 100px;
+    margin-top: 80px;
     border-radius: 50%;
     object-fit: cover;
     border: 3px solid #8f94fb; /* adds a colored border */
@@ -16,8 +16,8 @@
 .hero h1{
     text-align: center;
     width: 70%;
-    font-size: 90px;
-    font-weight: 600;
+    font-size: 50px;
+    font-weight: 400;
 }
 .hero h1 span{
     background: linear-gradient(90deg, #a8ff78 0%, #8f94fb 100%);
@@ -28,16 +28,16 @@
 .hero p{
     text-align: center;
     width: 50%;
-    font-size: 20px;
+    font-size: 14px;
     color: #ccc;
     line-height: 40px;
 }
 .hero-action{
     display: flex;
     align-items: center;
-    gap: 30px;
-    font-size: 24px;
-    font-weight: 500;
+    gap: 10px;
+    font-size: 14px;
+    font-weight: 300;
     margin-bottom: 50px;
 }
 .hero-connect{
@@ -58,7 +58,7 @@
 .hero-resume:hover{
     border-color: #8f94fb;
 }
-@media (max-width: 768px) {
+@media (max-width: 1080px) {
     .hero h1 {
         font-size: 50px;
         width: 90%;

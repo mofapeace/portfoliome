@@ -3,8 +3,8 @@
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    gap: 80px;
-    margin: 80px 170px;
+    gap: 60px;
+    margin: 60px 150px;
 }
 
 .about-title {
@@ -13,9 +13,9 @@
 }
 
 .about-title h1 {
-    padding: 0 30px;
-    font-size: 80px;
-    font-weight: 700;
+    padding: 0 20px;
+    font-size: 40px;
+    font-weight: 500;
     background: linear-gradient(90deg, #a8ff78 0%, #8f94fb 100%);
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
@@ -27,21 +27,22 @@
 
 .about-section {
     display: flex;
-    gap: 80px;
+    gap: 60px;
 }
+
 
 .about-right {
     display: flex;
     flex-direction: column;
-    gap: 80px;
+    gap: 60px;
 }
 
 .about-p {
     display: flex;
     flex-direction: column;
     gap: 20px;
-    font-size: 20px;
-    font-weight: 500;
+    font-size: 14px;
+    font-weight: 300;
     color: #a0a0a0;
     line-height: 1.6;
 }
@@ -54,14 +55,14 @@
 
 .about-skill {
     display: flex;
-    gap: 50px;
+    gap: 40px;
     align-items: center;
     transition: 0.3s;
 }
 .about-skill h2{
-    min-width: 235px;
-    font-size: 24px;
-    font-weight: 500;
+    min-width: 215px;
+    font-size: 14px;
+    font-weight: 300;
 }
 .about-skill hr{
     outline: none;
@@ -85,8 +86,8 @@
     transition: 0.5s;
 }
 .about-archivement h1{
-    font-size: 50px;
-    font-weight: 700;
+    font-size: 40px;
+    font-weight: 500;
     background: linear-gradient(269deg, #a8ff78 0%, #8f94fb 102.6%);
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
@@ -94,21 +95,21 @@
     color: transparent;
 }
 .about-archivement p{
-    font-size: 20px;
-    font-weight: 500;
+    font-size: 10px;
+    font-weight: 300;
     color: #a0a0a0;
 }
 .about-skill:hover, .about-archivement:hover{
     transform: scale(0.95);
 }
-@media (max-width: 768px) {
+@media (max-width: 1080px) {
     .about {
         margin: 50px 20px;
         gap: 50px;
         align-items: start;
     }
     .about-title h1 {
-        font-size: 50px;
+        font-size: 70px;
         padding: 0 10px;
     }
     .about-title img{
@@ -116,6 +117,7 @@
         height: 150px;
         margin-top: 20px;
         right: -20px;
+        border-radius: 5%;
     }
     .about-section {
         flex-direction: column;

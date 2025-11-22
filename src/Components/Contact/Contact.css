@@ -3,8 +3,8 @@
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    gap: 80px;
-    margin: 80px 170px;
+    gap: 50px;
+    margin: 80px 150px;
 }
 .Contact-title{
     text-align: center;
@@ -14,7 +14,7 @@
 .Contact-title h1{
     padding: 0 30px;
     font-size: 80px;
-    font-weight: 700;
+    font-weight: 500;
     background: linear-gradient(90deg, #a8ff78 0%, #8f94fb 100%);
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
@@ -25,7 +25,7 @@
 }
 .Contact-section{
     display: flex;
-    gap: 150px;
+    gap: 130px;
 }
 .Contact-left{
     display: flex;
@@ -34,7 +34,7 @@
 }
 .Contact-left h1{
     font-size: 80px;
-    font-weight: 700;
+    font-weight: 500;
     background: #8f94fb;
     -webkit-background-clip: text;
     background-clip: text;
@@ -67,11 +67,11 @@
 }
 .Contact-right label{
     font-size: 20px;
-    font-weight: 500;
+    font-weight: 300;
     color: #a0a0a0;
 }
 .Contact-right input, .Contact-right textarea{
-    width: 400px;
+    width: 300px;
     padding: 15px;
     border-radius: 8px;
     border: 1px solid #ccc;
@@ -87,7 +87,7 @@
     background: linear-gradient(90deg, #a8ff78 0%, #8f94fb 100%);
     color: #fff;
     font-size: 18px;
-    font-weight: 600;
+    font-weight: 400;
     cursor: pointer;
     transition: 0.3s;
 }

@@ -5,7 +5,7 @@
 }
 .services-title h1{
     padding: 0 30px;
-    font-size: 80px;
+    font-size: 40px;
     font-weight: 700;
     background: linear-gradient(90deg, #a8ff78 0%, #8f94fb 100%);
     -webkit-background-clip: text;
@@ -63,7 +63,7 @@
 
 .services-card i {
 
-    font-size: 50px;
+    font-size: 30px;
     background: linear-gradient(90deg, #a8ff78 0%, #8f94fb 100%);
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
@@ -73,8 +73,8 @@
 }
 
 .services-card h2 {
-    font-size: 1.4rem;
-    font-weight: 700;
+    font-size: 14px;
+    font-weight: 500;
     color: #0c0000;
     margin-bottom: 6px;
 }
@@ -85,7 +85,7 @@
     font-weight: 400;
     margin-bottom: 0;
 }
-@media (max-width: 768px) {
+@media (max-width: 1080px) {
     .services{
         align-items: center;
         gap: 70px;
@@ -93,7 +93,7 @@
     }
     .services-title h1{
         padding: 0;
-        font-size: 50px;
+        font-size: 70px;
     }
     .services-cards {
         flex-direction: column;
