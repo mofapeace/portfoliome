@@ -21,12 +21,15 @@ export default function Navbar() {
           </div>
 
           {/* DESKTOP MENU */}
-          <ul className="hidden md:flex gap-10 text-lg text-white">
+          <div className="nav-menu">
+            <ul className="hidden md:flex gap-10 text-lg text-white">
             <li><AnchorLink href="#home">Home</AnchorLink></li>
             <li><AnchorLink href="#about">About</AnchorLink></li>
             <li><AnchorLink href="#projects">Projects</AnchorLink></li>
             <li><AnchorLink href="#contact">Contact</AnchorLink></li>
           </ul>
+          </div>
+          
 
           {/* MOBILE MENU ICON */}
           <button
