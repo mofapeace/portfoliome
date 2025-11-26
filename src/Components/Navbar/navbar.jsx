@@ -1,5 +1,6 @@
 import { useState } from "react";
 import AnchorLink from "react-anchor-link-smooth-scroll";
+import './navbar.css';
 import Logo from "../../assets/logo.jpg";
 
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
@@ -45,7 +46,7 @@ export default function Navbar() {
       <div
         className={`fixed top-0 left-0 h-full w-64 bg-black/60 backdrop-blur-2xl 
         transform ${open ? "translate-x-0" : "-translate-x-full"} 
-        transition-transform duration-300 z-50`}
+        transition-transform duration-300 z-50 bg-white/30`}
       >
         {/* CLOSE BUTTON */}
         <button
@@ -56,12 +57,14 @@ export default function Navbar() {
         </button>
 
         {/* MENU ITEMS */}
-        <ul className="mt-24 flex flex-col gap-8 text-white text-xl pl-6">
+         <section className="flex justify-center">
+        <ul className="mobilenav mt-24 flex flex-col gap-6 text-white text-xl pl-6">
           <li><AnchorLink href="#home" onClick={() => setOpen(false)}>Home</AnchorLink></li>
           <li><AnchorLink href="#about" onClick={() => setOpen(false)}>About</AnchorLink></li>
-          <li><AnchorLink href="#projects" onClick={() => setOpen(false)}>Projects</AnchorLink></li>
+          <li><AnchorLink href="#services" onClick={() => setOpen(false)}>Services</AnchorLink></li>
           <li><AnchorLink href="#contact" onClick={() => setOpen(false)}>Contact</AnchorLink></li>
         </ul>
+        </section>
       </div>
     </>
   );
