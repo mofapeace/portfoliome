@@ -1,82 +1,36 @@
 .hero {
-    display: flex;
-    align-items: center;
-    flex-direction: column;
-    gap: 35px;
+    display: grid;
+    grid-template-columns: 120px 1fr 320px;
+    gap: 18px;
+    align-items: start;
+    padding: 60px 40px;
+    background: linear-gradient(180deg, #06070a 0%, #0d1117 100%);
+    border-radius: 12px;
+    margin-top: 0;
 }
 
 .hero img {
-    width: 100px;  
-    height: 100px;
-    margin-top: 80px;
-    border-radius: 50%;
+    width: 112px;
+    height: 112px;
+    border-radius: 12px;
     object-fit: cover;
-    border: 3px solid #8f94fb; /* adds a colored border */
+    border: 3px solid rgba(143,148,251,0.6);
 }
-.hero h1{
-    text-align: center;
-    width: 70%;
-    font-size: 50px;
-    font-weight: 400;
-}
-.hero h1 span{
-    background: linear-gradient(90deg, #a8ff78 0%, #8f94fb 100%);
-    -webkit-background-clip: text;
-    background-clip: text;
-    -webkit-text-fill-color: transparent;
-}
-.hero p{
-    text-align: center;
-    width: 50%;
-    font-size: 14px;
-    color: #ccc;
-    line-height: 40px;
-}
-.hero-action{
-    display: flex;
-    align-items: center;
-    gap: 10px;
-    font-size: 14px;
-    font-weight: 300;
-    margin-bottom: 50px;
-}
-.hero-connect{
-    padding: 25px 40px;
-    border-radius: 50px;
-    background: linear-gradient(90deg, #a8ff78 0%, #8f94fb 100%);
-    cursor: pointer;
-}
-.hero-resume{
-    padding: 25px 40px;
-    border-radius: 50px;
-    border: 2px solid white;
-    cursor: pointer;
-}
-.hero-connect:hover{
-    border: 2px solid white;
-}
-.hero-resume:hover{
-    border-color: #8f94fb;
-}
+.hero-main h1{ font-family: 'Source Code Pro', monospace; font-size:26px; color:#dfeffd }
+.hero-main h1 span{ color:#8ff389; opacity:0.9; margin-right:8px }
+.hero-main p{ color:#9aa6b3; margin-top:8px; line-height:1.6 }
+.hero-action{ display:flex; gap:10px; margin-top:14px }
+.hero-connect, .hero-resume{ padding:10px 18px; border-radius:10px; border:none; cursor:pointer; font-weight:700 }
+.hero-connect{ background:linear-gradient(90deg,#a8ff78,#8f94fb); color:#07101a }
+.hero-resume{ background:transparent; border:1px solid rgba(143,148,251,0.12); color:#dfe6ef }
+
+.hero-terminal{ background:#071018; border-radius:8px; padding:14px; color:#8fe4a2; font-family: 'Source Code Pro', monospace; font-size:12px; line-height:1.4 }
+.hero-terminal pre{ margin:0 }
 @media (max-width: 1080px) {
-    .hero h1 {
-        font-size: 50px;
-        width: 90%;
-        margin-top: 50px;
-    }
-    .hero p {
-        width: 90%;
-        font-size: 18px;
-        line-height: 30px;
-    }
-    .hero img {
-        width: 200px;  
-        height: 200px;
-        margin-top: 100px;
-    }
-    .hero-action{
-        flex-direction: column;
-        gap: 20px;
-        font-size: 20px;
-    }
+  .hero { grid-template-columns: 1fr; padding:40px 20px; grid-auto-rows:auto; display:flex; flex-direction:column; align-items:center; text-align:center }
+  .hero-left{ display:flex; justify-content:center; width:100%; margin-bottom:20px }
+  .hero img{ width:160px; height:160px; border-radius:12px }
+  .hero-main{ width:100%; padding:0 16px }
+  .hero-terminal{ order:3; width:100% }
+  .hero-main{ order:2 }
 }

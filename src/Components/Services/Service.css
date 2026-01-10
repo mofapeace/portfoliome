@@ -1,103 +1,30 @@
-.services-title {
-    text-align: center;
-    position: relative;
-    
-}
-.services-title h1{
-    padding: 0 30px;
-    font-size: 40px;
-    font-weight: 700;
-    background: linear-gradient(90deg, #a8ff78 0%, #8f94fb 100%);
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-    background-clip: text;
-    color: transparent;
-    letter-spacing: 2px;
-    margin-bottom: 0;
-}
-.services-title p{
-    font-size: 20px;
-    font-weight: 500;
-    color: #a0a0a0;
-    line-height: 1.6;
-    margin-top: 10px;
-}
-.services-cards {
-    display: flex;
-    gap: 32px;
-    justify-content: center;
-    margin-top: 40px;
-    flex-wrap: wrap;
-}
+.services-title{ text-align:left }
+.services-title h1{ font-size:32px; font-weight:800; color:#a8ff78; font-family:'Source Code Pro', monospace }
+.services-title p{ color:#98a0b0 }
 
-.services-card {
-    background: #8f94fb;
-    border-radius: 18px;
-    box-shadow: 0 4px 24px 0 rgba(0,0,0,0.10);
-    padding: 28px 28px;
-    width: 320px;
-    min-height: 260px;
-    display: flex;
-    flex-direction: column;
-    gap: 18px;
-    position: relative;
-    transition: transform 0.2s, box-shadow 0.2s;
-}
-.services-card::before{
-    position: absolute;
-    content: " ";
-    height: 100%;
-    width: 100%;
-    top: 0;
-    left: 0;
-    border-radius: 10px;
-    background: #a8ff78;
-    transform: rotate(0deg);
-    z-index: -1;
-}
+.services-section{ display:flex; flex-direction:column; gap:18px }
+.services-cards{ display:flex; gap:18px; flex-wrap:wrap }
+.services-card-wrapper{ flex:1; min-width:280px; display:flex; flex-direction:column }
+.services-card{ background:#081018; border:1px solid rgba(143,148,251,0.06); color:#dcebf2; padding:18px; border-radius:10px; cursor:pointer; transition:all .28s ease }
+.services-card i{ font-size:22px; color:#8f94fb; margin-bottom:8px }
+.services-card h2{ font-size:16px; margin:0 0 6px }
+.services-card p{ color:#9aa6b3; font-size:13px }
+.card-cta{ margin-top:12px; font-size:13px; color:#a8ff78; font-weight:700 }
+.services-card.active{ transform:translateY(-8px); box-shadow:0 20px 40px rgba(0,0,0,0.6), 0 0 22px rgba(143,148,251,0.06) }
 
-.services-card:hover {
-    transform: rotate(10deg) scale(1.05);
-    box-shadow: 0 8px 32px 0 rgba(168,255,120,0.15), 0 4px 24px 0 rgba(143,148,251,0.10);
-}
+.service-details{ max-height:0; overflow:hidden; transition:max-height .36s ease, opacity .28s; opacity:0; margin-top:0 }
+.service-details.open{ max-height:600px; opacity:1; margin-top:18px }
+.service-details h3{ font-family:'Source Code Pro', monospace; color:#8ff389; margin:6px 0 }
+.projects-grid{ display:grid; grid-template-columns: repeat(auto-fill, minmax(220px, 1fr)); gap:12px }
+.project-card{ background:#071018; border:1px solid rgba(143,148,251,0.04); padding:12px; border-radius:8px; display:flex; gap:10px; align-items:center }
+.project-img{ width:72px; height:72px; border-radius:8px; background:linear-gradient(90deg,#a8ff78,#8f94fb); display:flex; align-items:center; justify-content:center; color:#071018; font-weight:800 }
+.project-info h4{ margin:0; font-size:14px; color:#e6eef0 }
+.project-info p{ margin:4px 0 0; font-size:12px; color:#9aa6b3 }
 
-.services-card i {
-
-    font-size: 30px;
-    background: linear-gradient(90deg, #a8ff78 0%, #8f94fb 100%);
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-    background-clip: text;
-    color: transparent;
-    margin-bottom: 8px;
-}
-
-.services-card h2 {
-    font-size: 14px;
-    font-weight: 500;
-    color: #0c0000;
-    margin-bottom: 6px;
-}
-
-.service-card p {
-    color: #a0a0a0;
-    font-size: 1rem;
-    font-weight: 400;
-    margin-bottom: 0;
-}
-@media (max-width: 1080px) {
-    .services{
-        align-items: center;
-        gap: 70px;
-        margin: 20px 70px;
-    }
-    .services-title h1{
-        padding: 0;
-        font-size: 70px;
-    }
-    .services-cards {
-        flex-direction: column;
-        align-items: center;
-        gap: 40px;
-    }
+@media (max-width:1080px){
+  .services{ margin:20px; text-align:center }
+  .services-title{ text-align:center }
+  .services-cards{ flex-direction:column; align-items:center }
+  .services-card-wrapper{ width:100%; max-width:380px }
+  .projects-grid{ grid-template-columns: 1fr }
 }

@@ -1,129 +1,24 @@
-.Contact{
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    gap: 50px;
-    margin: 80px 150px;
-}
-.Contact-title{
-    text-align: center;
-    position: relative;
-    
-}
-.Contact-title h1{
-    padding: 0 30px;
-    font-size: 50px;
-    font-weight: 400;
-    background: linear-gradient(90deg, #a8ff78 0%, #8f94fb 100%);
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-    background-clip: text;
-    color: transparent;
-    letter-spacing: 2px;
-    margin-bottom: 0;
-}
-.Contact-section{
-    display: flex;
-    gap: 130px;
-}
-.Contact-left{
-    display: flex;
-    flex-direction: column;
-    gap: 30px;
-}
-.Contact-left h1{
-    font-size: 50px;
-    font-weight: 400;
-    background: #8f94fb;
-    -webkit-background-clip: text;
-    background-clip: text;
-    -webkit-text-fill-color: transparent;
-}
-.Contact-left p{
-    font-size: 14px;
-    font-weight: 400;
-    color: #a0a0a0;
-    line-height: 1.6;
-    margin-top: 10px;
-}
-.Contact-details{
-    display: flex;
-    flex-direction: column;
-    gap: 30px;
-    color: #a0a0a0;
-    font-size: 24px;
-}
-.Contact-detail{
-    display: flex;
-    align-items: center;
-    gap: 20px;
-}
-.Contact-right{
-    display: flex;
-    flex-direction: column;
-    align-items: start;
-    gap: 30px;
-}
-.Contact-right label{
-    font-size: 14px;
-    font-weight: 300;
-    color: #a0a0a0;
-}
-.Contact-right input, .Contact-right textarea{
-    width: 300px;
-    padding: 15px;
-    border-radius: 8px;
-    border: 1px solid #ccc;
-    font-size: 16px;
-    font-family: 'Poppins', sans-serif;
-    background: #1e1e2f;
-    color: #fff;
-}
-.Contact-submit{
-    padding: 15px 30px;
-    border: none;
-    border-radius: 50px;
-    background: linear-gradient(90deg, #a8ff78 0%, #8f94fb 100%);
-    color: #fff;
-    font-size: 18px;
-    font-weight: 400;
-    cursor: pointer;
-    transition: 0.3s;
-}
-.Contact-submit:hover{
-    background: linear-gradient(90deg, #8f94fb 0%, #a8ff78 100%);
-    transform: scale(1.05);
-    transition: 0.3s;
-}
-@media (max-width: 1080px){
-    .Contact{
-        gap: 50px;
-        margin: 40px 20px;
-        align-items: start;
-    }
-    .Contact-title h1{
-        padding: 0;
-        font-size: 50px;
-        font-weight: 600;
-    }
-    .Contact-section{
-        flex-direction: column;
-        gap: 50px;
-    }
-    .Contact-left h1{
-        font-size: 50px;
-    }
-    .Contact-left p{
-        font-size: 16px;
-    }
-    .Contact-details{
-        font-size: 24px;
-        gap: 20px;
-    }
-    .Contact-right input, .Contact-right textarea{
-        width: 100%;
-        font-size: 16px;
+.Contact{ display:flex; flex-direction:column; gap:36px; margin:60px auto; max-width:1000px; align-items:center }
+.Contact-title{ text-align:center; width:100% }
+.Contact-title h1{ font-size:42px; font-weight:800; background:linear-gradient(90deg,#a8ff78,#8f94fb); -webkit-background-clip:text; -webkit-text-fill-color:transparent }
+.Contact-section{ display:flex; gap:16px; justify-content:center; width:100% }
+.Contact-left{ flex:0 0 360px; display:flex; flex-direction:column; gap:18px }
+.Contact-left h1{ font-size:36px; font-weight:700; color:#dfefff }
+.Contact-left p{ color:#9aa6b3 }
+.Contact-details{ display:flex; flex-direction:column; gap:14px; color:#9aa6b3 }
+.Contact-detail{ display:flex; align-items:center; gap:14px }
+.Contact-detail i{ color:linear-gradient(90deg,#a8ff78,#8f94fb); color:#a8ff78 }
 
-    }
+.Contact-right{ width:380px; display:flex; flex-direction:column; gap:16px }
+.Contact-right label{ font-size:13px; color:#9aa6b3 }
+.Contact-right input, .Contact-right textarea{ width:100%; padding:14px; border-radius:10px; border:1px solid rgba(143,148,251,0.08); background:#0e0f14; color:#e6eef3; font-family:inherit }
+.Contact-right input:focus, .Contact-right textarea:focus{ outline:none; box-shadow:0 0 20px rgba(143,148,251,0.08) }
+.Contact-submit{ padding:12px 20px; border-radius:50px; border:none; background:linear-gradient(90deg,#a8ff78,#8f94fb); color:#081018; font-weight:700; cursor:pointer }
+.Contact-submit:hover{ transform:scale(1.03) }
+
+@media (max-width:1080px){
+  .Contact{ margin:30px 20px; padding:0 16px }
+  .Contact-left{ flex:none; width:100%; align-items:center }
+  .Contact-section{ flex-direction:column; align-items:center }
+  .Contact-right{ width:100%; max-width:380px }
 }

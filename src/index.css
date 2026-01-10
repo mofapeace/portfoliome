@@ -10,3 +10,33 @@ body{
   color: white;
   font-family: 'Outfit', sans-serif;
 }
+
+/* Offset content from left sidebar on wide screens (excludes #about) */
+@media (min-width:1080px) {
+  :root { --sidebar-width: 72px; --sidebar-gap: 24px; }
+  #home, #services, #contact, .Footer, .projects, .services, .Contact {
+    padding-left: calc(var(--sidebar-width) + var(--sidebar-gap));
+    transition: padding-left .18s ease;
+  }
+}
+
+@media (max-width:1079px) {
+  #home, #services, #contact, .Footer, .projects, .services, .Contact {
+    padding-left: 0;
+  }
+}
+
+/* Simple fade-in animation used across sections */
+.fade-in{ animation: fadeIn .6s ease both }
+@keyframes fadeIn{
+  from{ opacity:0; transform:translateY(8px) }
+  to{ opacity:1; transform:translateY(0) }
+}
+
+/* subtle hover/entrance animation for project cards */
+.project-card{ transition: transform .28s ease, box-shadow .28s ease }
+.project-card:hover{ transform: translateY(-6px); box-shadow:0 18px 40px rgba(0,0,0,0.6) }
+
+/* small pulse for CTA buttons */
+.hero-connect, .hero-resume, .subscribe{ transition: transform .18s ease }
+.hero-connect:hover, .hero-resume:hover, .subscribe:hover{ transform: translateY(-4px) }

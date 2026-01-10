@@ -1,5 +1,5 @@
 import React from 'react'
-import './Contact.css/'
+import './Contact.css'
 
 const Contact = () => {
 
@@ -27,9 +27,11 @@ const Contact = () => {
   };
 
   return (
-    <div id='contact' className='Contact'>
+    <div id='contact' className='Contact fade-in'>
         <div className="Contact-title">
             <h1>Get In Touch</h1>
+            <p>Feel free to reach out for collaborations or just a friendly hello!</p>
+            
         </div>
         <div className="Contact-section">
             <div className="Contact-left">
@@ -37,13 +39,16 @@ const Contact = () => {
                 <p>I would love to hear from you.<br/> Just say hi on message box for any inquiry</p>
                 <div className="Contact-details">
                     <div className="Contact-detail">
-                        <i class="fa-solid fa-envelope"></i> <p>Mofagodlove143@gmail.com</p>
+                      <i className="fa-solid fa-envelope"></i>
+                      <p>Mofagodlove143@gmail.com</p>
                     </div>
                     <div className="Contact-detail">
-                        <i class="fa-solid fa-phone"></i> <p>+237 671 660 372</p>
+                      <i className="fa-solid fa-phone"></i>
+                      <p>+237 671 660 372</p>
                     </div>
                     <div className="Contact-detail">
-                        <i class="fa-brands fa-linkedin"></i> <p>Godlove Mofa</p>
+                      <i className="fa-brands fa-linkedin"></i>
+                      <p>Godlove Mofa</p>
                     </div>
                 </div>
             </div>

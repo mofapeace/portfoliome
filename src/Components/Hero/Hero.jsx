@@ -1,21 +1,31 @@
 import React from 'react'
 import './Hero.css'
 import profileImg from '../../../src/assets/profile-img.jpg'
+
 const Hero = () => {
   return (
-    <div>
-        <div id='home' className="hero">
-            <img src={profileImg} alt="" />
-            <h1><span>I'm Mofa Godlove,</span> Frontend Developer, Cybersecurity Enthusiast and Tech junckie.</h1>
-            <p>
-                I build modern, responsive web applications and am passionate about protecting digital spaces. Always exploring new technologies and sharing knowledge with the tech community.
-            </p>
-            <div className="hero-action">
-                <div className="hero-connect">Connect with me</div>
-                <div className="hero-resume">My resume</div>
-            </div>
+    <header id='home' className="hero fade-in">
+      <div className="hero-left">
+        <img src={profileImg} alt="profile" />
+      </div>
+      <div className="hero-main">
+        <h1><span>mofa@host:~$</span> sudo run — build secure web apps</h1>
+        <p>
+          I design and secure modern web apps — frontend development fused with cybersecurity tooling and practices. I think in components and logs.
+        </p>
+        <div className="hero-action">
+          <button className="hero-connect">Connect</button>
+          <button className="hero-resume">Resume</button>
         </div>
-    </div>
+      </div>
+      <div className="hero-terminal">
+        <pre>{`root@machine:~$ nmap -sV 192.168.1.0/24
+open 22/tcp  ssh
+open 80/tcp  http
+open 443/tcp https
+`}</pre>
+      </div>
+    </header>
   )
 }
 

@@ -1,9 +1,9 @@
 import React from 'react'
 import './Footer.css'
-import Logo from '../../../src/assets/logo.jpg'
+import Logo from '../../assets/logo.jpg'
 const Footer = () => {
-  return (
-    <div className='Footer'>
+    return (
+        <div className='Footer fade-in'>
         <div className="Footer-top">
             <div className="top-left">
                 <img src={Logo} alt="" />
@@ -11,10 +11,10 @@ const Footer = () => {
             </div>
             <div className="top-right">
                 <div className="email-input">
-                    <i class="fa-solid fa-envelope"></i>
+                    <i className="fa-solid fa-envelope"></i>
                     <input type="email" placeholder='Enter Your Email' />
+                    <div className="subscribe">Subscribe</div>
                 </div>
-                <div className="subscribe">Subscribe</div>
             </div>
         </div>
         <hr />
