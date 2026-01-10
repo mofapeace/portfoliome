@@ -5,6 +5,7 @@ import About from './Components/About/About'
 import Service from './Components/Services/Service'
 import Contact from './Components/Contact/Contact'
 import Footer from './Components/Footer/Footer'
+import { Analytics } from "@vercel/analytics/next"
 const App = () => {
   return (
     <div>

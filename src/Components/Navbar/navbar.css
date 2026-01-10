@@ -59,8 +59,6 @@
 
 /* Sidebar for wide screens */
 .sidebar{ display:none }
-.mobile-nav-toggle{ display:none }
-.mobile-sidebar{ display:none }
 @media (min-width:1080px){
   .mobile-top{ display:none }
   .mobile-nav-toggle{ display:none !important }
