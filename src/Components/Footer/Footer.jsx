@@ -21,9 +21,9 @@ const Footer = () => {
         <div className="Footer-bottom">
             <p className='bottom-left'>© 2024 Godlove Mofa. All rights reserved.</p>
             <div className="bottom-right">
-                <p>Terms of Services</p>
-                <p>Privacy policies</p>
-                <p>Connect with me</p>
+                <a href="#" className="footer-link">Terms of Services</a>
+                <a href="#" className="footer-link">Privacy policies</a>
+                <a href="#contact" className="footer-link">Connect with me</a>
             </div>
         </div>
     </div>
