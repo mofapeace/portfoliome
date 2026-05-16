@@ -46,9 +46,13 @@ const Contact = () => {
                       <i className="fa-solid fa-phone"></i>
                       <p>+237 671 660 372</p>
                     </a>
-                    <a href="https://linkedin.com/in/mofa-godlove-tanyi" target="_blank" rel="noopener noreferrer" className="Contact-detail">
+                    <a href="https://www.linkedin.com/in/mofa-godlove-tanyi/" target="_blank" rel="noopener noreferrer" className="Contact-detail">
                       <i className="fa-brands fa-linkedin"></i>
                       <p>Godlove Mofa</p>
+                    </a>
+                    <a href="https://github.com/mofapeace" target="_blank" rel="noopener noreferrer" className="Contact-detail">
+                      <i className="fa-brands fa-github"></i>
+                      <p>mofapeace</p>
                     </a>
                 </div>
             </div>

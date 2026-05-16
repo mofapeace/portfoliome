@@ -4,8 +4,8 @@ import './navbar.css';
 import Logo from "../../assets/logo.jpg";
 
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faBars, faTimes, faHome, faUser, faFolderOpen, faEnvelope } from "@fortawesome/free-solid-svg-icons";
-import { faGithub } from "@fortawesome/free-brands-svg-icons";
+import { faBars, faTimes, faHome, faUser, faFolderOpen, faEnvelope, faBriefcase } from "@fortawesome/free-solid-svg-icons";
+import { faGithub, faLinkedin } from "@fortawesome/free-brands-svg-icons";
 
 export default function Navbar() {
   const [open, setOpen] = useState(false);
@@ -31,8 +31,10 @@ export default function Navbar() {
             <li><AnchorLink href="#home"><FontAwesomeIcon icon={faHome} /></AnchorLink></li>
             <li><AnchorLink href="#about"><FontAwesomeIcon icon={faUser} /></AnchorLink></li>
             <li><AnchorLink href="#projects"><FontAwesomeIcon icon={faFolderOpen} /></AnchorLink></li>
-            <li><AnchorLink href="#services"><FontAwesomeIcon icon={faGithub} /></AnchorLink></li>
+            <li><AnchorLink href="#services"><FontAwesomeIcon icon={faBriefcase} /></AnchorLink></li>
             <li><AnchorLink href="#contact"><FontAwesomeIcon icon={faEnvelope} /></AnchorLink></li>
+            <li><a href="https://github.com/mofapeace" target="_blank" rel="noopener noreferrer"><FontAwesomeIcon icon={faGithub} /></a></li>
+            <li><a href="https://www.linkedin.com/in/mofa-godlove-tanyi/" target="_blank" rel="noopener noreferrer"><FontAwesomeIcon icon={faLinkedin} /></a></li>
           </ul>
         </nav>
       </aside>
@@ -47,8 +49,10 @@ export default function Navbar() {
             <li><AnchorLink href="#home" onClick={() => setOpen(false)}><FontAwesomeIcon icon={faHome} /></AnchorLink></li>
             <li><AnchorLink href="#about" onClick={() => setOpen(false)}><FontAwesomeIcon icon={faUser} /></AnchorLink></li>
             <li><AnchorLink href="#projects" onClick={() => setOpen(false)}><FontAwesomeIcon icon={faFolderOpen} /></AnchorLink></li>
-            <li><AnchorLink href="#services" onClick={() => setOpen(false)}><FontAwesomeIcon icon={faGithub} /></AnchorLink></li>
+            <li><AnchorLink href="#services" onClick={() => setOpen(false)}><FontAwesomeIcon icon={faBriefcase} /></AnchorLink></li>
             <li><AnchorLink href="#contact" onClick={() => setOpen(false)}><FontAwesomeIcon icon={faEnvelope} /></AnchorLink></li>
+            <li><a href="https://github.com/mofapeace" target="_blank" rel="noopener noreferrer"><FontAwesomeIcon icon={faGithub} /></a></li>
+            <li><a href="https://www.linkedin.com/in/mofa-godlove-tanyi/" target="_blank" rel="noopener noreferrer"><FontAwesomeIcon icon={faLinkedin} /></a></li>
           </ul>
         </nav>
       </aside>
