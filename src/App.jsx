@@ -3,6 +3,7 @@ import Navbar from './Components/Navbar/navbar'
 import Hero from './Components/Hero/Hero'
 import About from './Components/About/About'
 import Service from './Components/Services/Service'
+import Projects from './Components/Projects/Projects'
 import Contact from './Components/Contact/Contact'
 import Footer from './Components/Footer/Footer'
 import { Analytics } from "@vercel/analytics/react"
@@ -13,6 +14,7 @@ const App = () => {
       <Hero/>
       <About/>
       <Service/>
+      <Projects/>
       <Contact/>
       <Footer/>
       <Analytics/>

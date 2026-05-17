@@ -4,11 +4,17 @@ import './navbar.css';
 import Logo from "../../assets/logo.jpg";
 
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faBars, faTimes, faHome, faUser, faFolderOpen, faEnvelope, faBriefcase } from "@fortawesome/free-solid-svg-icons";
+import { faBars, faTimes, faHome, faUser, faFolderOpen, faEnvelope, faBriefcase, faSun, faMoon } from "@fortawesome/free-solid-svg-icons";
 import { faGithub, faLinkedin } from "@fortawesome/free-brands-svg-icons";
 
 export default function Navbar() {
   const [open, setOpen] = useState(false);
+  const [isLight, setIsLight] = useState(false);
+
+  const toggleTheme = () => {
+    setIsLight(!isLight);
+    document.body.classList.toggle('light-mode');
+  };
 
   return (
     <>
@@ -37,6 +43,11 @@ export default function Navbar() {
             <li><a href="https://www.linkedin.com/in/mofa-godlove-tanyi/" target="_blank" rel="noopener noreferrer"><FontAwesomeIcon icon={faLinkedin} /></a></li>
           </ul>
         </nav>
+        <div className="sidebar-bottom">
+          <button onClick={toggleTheme} className="theme-toggle-btn" aria-label="Toggle Theme">
+            <FontAwesomeIcon icon={isLight ? faMoon : faSun} />
+          </button>
+        </div>
       </aside>
 
       {/* MOBILE SIDEBAR (toggleable, same style as PC) */}
@@ -55,6 +66,11 @@ export default function Navbar() {
             <li><a href="https://www.linkedin.com/in/mofa-godlove-tanyi/" target="_blank" rel="noopener noreferrer"><FontAwesomeIcon icon={faLinkedin} /></a></li>
           </ul>
         </nav>
+        <div className="sidebar-bottom">
+          <button onClick={toggleTheme} className="theme-toggle-btn" aria-label="Toggle Theme">
+            <FontAwesomeIcon icon={isLight ? faMoon : faSun} />
+          </button>
+        </div>
       </aside>
     </>
   );

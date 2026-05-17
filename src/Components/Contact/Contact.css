@@ -6,13 +6,15 @@
 .Contact-left h1{ font-size:36px; font-weight:700; color:#dfefff }
 .Contact-left p{ color:#9aa6b3 }
 .Contact-details{ display:flex; flex-direction:column; gap:14px; color:#9aa6b3 }
-.Contact-detail{ display:flex; align-items:center; gap:14px }
-.Contact-detail i{ color:linear-gradient(90deg,#a8ff78,#8f94fb); color:#a8ff78 }
+.Contact-detail{ display:flex; align-items:center; gap:14px; text-decoration:none; color:inherit; padding:6px 12px; border-radius:8px; transition: transform 0.25s cubic-bezier(0.165, 0.84, 0.44, 1), color 0.25s ease, background 0.25s ease; width: fit-content }
+.Contact-detail:hover { transform: translateX(8px); color: #ffffff; background: rgba(255, 255, 255, 0.03) }
+.Contact-detail i{ color:#a8ff78; transition: transform 0.25s cubic-bezier(0.175, 0.885, 0.32, 1.275), color 0.25s ease }
+.Contact-detail:hover i { transform: scale(1.22) }
 
 .Contact-right{ width:380px; display:flex; flex-direction:column; gap:16px }
 .Contact-right label{ font-size:13px; color:#9aa6b3 }
-.Contact-right input, .Contact-right textarea{ width:100%; padding:14px; border-radius:10px; border:1px solid rgba(143,148,251,0.08); background:#0e0f14; color:#e6eef3; font-family:inherit }
-.Contact-right input:focus, .Contact-right textarea:focus{ outline:none; box-shadow:0 0 20px rgba(143,148,251,0.08) }
+.Contact-right input, .Contact-right textarea{ width:100%; padding:14px; border-radius:10px; border:1px solid rgba(143,148,251,0.08); background:#0e0f14; color:#e6eef3; font-family:inherit; transition: border-color 0.3s ease, box-shadow 0.3s ease, transform 0.3s cubic-bezier(0.165, 0.84, 0.44, 1) }
+.Contact-right input:focus, .Contact-right textarea:focus{ outline:none; transform: scale(1.015); border-color: rgba(168,255,120,0.3); box-shadow:0 0 20px rgba(168,255,120,0.06) }
 .Contact-submit{ padding:12px 20px; border-radius:50px; border:none; background:linear-gradient(90deg,#a8ff78,#8f94fb); color:#081018; font-weight:700; cursor:pointer }
 .Contact-submit:hover{ transform:scale(1.03) }
 

@@ -7,7 +7,7 @@ const Footer = () => {
         <div className="Footer-top">
             <div className="top-left">
                 <img src={Logo} alt="" />
-                <p>I am a frontend developer with 2 years of expirence, also into Ethical hacking with some skills in Wireshark, Nmap, Burpsuite and more tools. i also have skills in graphics and desgining using tools like pixellab coraldraw and photoshop.</p>
+                <p>I am a frontend developer with 2 years of experience, also into ethical hacking with skills in Wireshark, Nmap, Burp Suite, and other tools. I am also skilled in graphics and designing using tools like PixelLab, CorelDraw, and Photoshop.</p>
             </div>
             <div className="top-right">
                 <div className="email-input">

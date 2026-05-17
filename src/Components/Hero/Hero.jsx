@@ -14,16 +14,16 @@ const Hero = () => {
           I design and secure modern web apps — frontend development fused with cybersecurity tooling and practices. I think in components and logs.
         </p>
         <div className="hero-action">
-          <button className="hero-connect">Connect</button>
-          <button className="hero-resume">Resume</button>
+          <a href="#contact" className="hero-connect">Connect</a>
+          <a href="/resume.pdf" target="_blank" rel="noopener noreferrer" className="hero-resume">Resume</a>
         </div>
       </div>
       <div className="hero-terminal">
         <pre>{`root@machine:~$ nmap -sV 192.168.1.0/24
 open 22/tcp  ssh
 open 80/tcp  http
-open 443/tcp https
-`}</pre>
+open 443/tcp https`}
+<span className="terminal-cursor">█</span></pre>
       </div>
     </header>
   )

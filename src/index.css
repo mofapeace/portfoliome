@@ -40,3 +40,272 @@ body{
 /* small pulse for CTA buttons */
 .hero-connect, .hero-resume, .subscribe{ transition: transform .18s ease }
 .hero-connect:hover, .hero-resume:hover, .subscribe:hover{ transform: translateY(-4px) }
+
+/* ==========================================
+   LIGHT MODE STYLING (100% REVERSIBLE OVERRIDES)
+   ========================================== */
+body.light-mode {
+  background: #f1f5f9;
+  color: #0f172a;
+}
+
+/* Sidebar and Mobile Sidebar */
+body.light-mode .sidebar,
+body.light-mode .mobile-sidebar {
+  background: rgba(255, 255, 255, 0.85);
+  backdrop-filter: blur(12px);
+  box-shadow: 0 10px 30px rgba(0,0,0,0.06), 0 0 0 1px rgba(0,0,0,0.04);
+}
+body.light-mode .sidebar-nav a,
+body.light-mode .mobile-sidebar .sidebar-nav a {
+  color: #475569;
+}
+body.light-mode .sidebar-nav a:hover,
+body.light-mode .mobile-sidebar .sidebar-nav a:hover {
+  color: #0f172a;
+  background: linear-gradient(90deg, #a8ff78, #8f94fb);
+}
+body.light-mode .theme-toggle-btn {
+  color: #475569;
+}
+body.light-mode .theme-toggle-btn:hover {
+  color: #081018;
+}
+
+/* Hero Section */
+body.light-mode .hero {
+  background: linear-gradient(180deg, #ffffff 0%, #f8fafc 100%);
+  box-shadow: 0 10px 30px rgba(0,0,0,0.04), 0 0 0 1px rgba(0,0,0,0.02);
+}
+body.light-mode .hero-main h1 {
+  color: #0f172a;
+}
+body.light-mode .hero-main h1 span {
+  color: #1b8a13; /* slightly darker green for high contrast readability */
+}
+body.light-mode .hero-main p {
+  color: #475569;
+}
+body.light-mode .hero-resume {
+  border-color: rgba(143,148,251,0.3);
+  color: #475569;
+}
+body.light-mode .hero-resume:hover {
+  background: rgba(143,148,251,0.05);
+  color: #0f172a;
+}
+/* Clean, high-contrast light-mode terminal widget */
+body.light-mode .hero-terminal {
+  background: #f8fafc;
+  color: #0f172a;
+  border: 1px solid rgba(0, 0, 0, 0.08);
+  box-shadow: inset 0 2px 4px rgba(0, 0, 0, 0.02), 0 4px 12px rgba(0, 0, 0, 0.03);
+  animation: none;
+}
+
+/* About Section */
+body.light-mode .about {
+  background: linear-gradient(180deg, #ffffff, #f8fafc);
+  box-shadow: 0 10px 30px rgba(0,0,0,0.04), 0 0 0 1px rgba(0,0,0,0.02);
+}
+body.light-mode .about-title h1 {
+  color: #2e7d32;
+}
+body.light-mode .about-p {
+  color: #475569;
+}
+body.light-mode .about-skill h2 {
+  color: #334155;
+}
+body.light-mode .about-skill:hover {
+  background: rgba(0, 0, 0, 0.03);
+}
+body.light-mode .about-skill:hover h2 {
+  color: #2e7d32;
+}
+body.light-mode .about-skill:hover .skill-bar {
+  box-shadow: 0 0 15px rgba(143, 148, 251, 0.4);
+}
+body.light-mode .about-archivement {
+  color: #475569;
+}
+body.light-mode .about-archivement h1 {
+  color: #2e7d32;
+}
+
+/* Services Section */
+body.light-mode .services-title h1 {
+  color: #2e7d32;
+}
+body.light-mode .services-title p {
+  color: #475569;
+}
+body.light-mode .services-card {
+  background: #ffffff;
+  border-color: rgba(0,0,0,0.08);
+  color: #0f172a;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.02);
+}
+body.light-mode .services-card p {
+  color: #475569;
+}
+body.light-mode .card-cta {
+  color: #2e7d32;
+}
+body.light-mode .services-card.active {
+  box-shadow: 0 20px 40px rgba(0,0,0,0.05), 0 0 1px rgba(0,0,0,0.05);
+}
+body.light-mode .project-card {
+  background: #ffffff;
+  border-color: rgba(0,0,0,0.08);
+}
+body.light-mode .project-card:hover {
+  border-color: rgba(143,148,251,0.3);
+  box-shadow: 0 10px 20px rgba(0,0,0,0.03), 0 0 12px rgba(143,148,251,0.08);
+}
+body.light-mode .project-card:hover h4 {
+  color: #2e7d32;
+}
+body.light-mode .project-info h4 {
+  color: #0f172a;
+}
+body.light-mode .project-info p {
+  color: #475569;
+}
+body.light-mode .service-details h3 {
+  color: #1b8a13;
+}
+
+/* Contact Section */
+body.light-mode .Contact-title h1 {
+  background: linear-gradient(90deg, #2e7d32, #4f46e5);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+body.light-mode .Contact-title p {
+  color: #475569;
+}
+body.light-mode .Contact-left h1 {
+  color: #0f172a;
+}
+body.light-mode .Contact-left p {
+  color: #475569;
+}
+body.light-mode .Contact-details {
+  color: #475569;
+}
+body.light-mode .Contact-detail:hover {
+  color: #0f172a;
+  background: rgba(0, 0, 0, 0.04);
+}
+body.light-mode .Contact-right input,
+body.light-mode .Contact-right textarea {
+  background: #ffffff;
+  border-color: rgba(0,0,0,0.1);
+  color: #0f172a;
+}
+body.light-mode .Contact-right input:focus,
+body.light-mode .Contact-right textarea:focus {
+  box-shadow: 0 0 20px rgba(79,70,229,0.06);
+  border-color: rgba(79,70,229,0.3);
+}
+body.light-mode .Contact-submit {
+  background: linear-gradient(90deg, #2e7d32, #4f46e5);
+  color: #ffffff;
+}
+
+/* Footer Section */
+body.light-mode .Footer {
+  background: #f8fafc;
+  border-top: 1px solid rgba(0,0,0,0.05);
+}
+body.light-mode .top-left p {
+  color: #475569;
+}
+body.light-mode .email-input {
+  background: #ffffff;
+  border: 1px solid rgba(0,0,0,0.1);
+}
+body.light-mode .email-input input {
+  color: #0f172a;
+}
+body.light-mode .email-input i {
+  color: #475569;
+}
+body.light-mode .subscribe {
+  background: linear-gradient(90deg, #2e7d32, #4f46e5);
+  color: #ffffff;
+}
+body.light-mode .Footer-bottom {
+  color: #475569;
+}
+body.light-mode .footer-link {
+  color: #475569;
+}
+body.light-mode .footer-link:hover {
+  color: #0f172a;
+}
+
+/* Projects Showcase Light Mode Overrides */
+body.light-mode .projects-title h1 {
+  color: #2e7d32;
+}
+body.light-mode .projects-title p {
+  color: #475569;
+}
+body.light-mode .filter-tabs button {
+  background: #ffffff;
+  border-color: rgba(0, 0, 0, 0.08);
+  color: #475569;
+}
+body.light-mode .filter-tabs button:hover {
+  background: rgba(143, 148, 251, 0.05);
+  border-color: rgba(143, 148, 251, 0.25);
+  color: #0f172a;
+}
+body.light-mode .filter-tabs button.active {
+  background: linear-gradient(90deg, #2e7d32, #4f46e5);
+  color: #ffffff;
+  border-color: transparent;
+  box-shadow: 0 5px 15px rgba(79, 70, 229, 0.15);
+}
+body.light-mode .project-card-showcase {
+  background: #ffffff;
+  border-color: rgba(0, 0, 0, 0.08);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.02);
+}
+body.light-mode .project-card-showcase:hover {
+  border-color: rgba(143, 148, 251, 0.3);
+  box-shadow: 0 15px 30px rgba(0, 0, 0, 0.04), 0 0 18px rgba(143, 148, 251, 0.08);
+}
+body.light-mode .project-card-icon {
+  color: #4f46e5;
+}
+body.light-mode .project-card-showcase:hover .project-card-icon {
+  color: #2e7d32;
+}
+body.light-mode .project-card-links a {
+  color: #475569;
+}
+body.light-mode .project-card-links a:hover {
+  color: #2e7d32;
+}
+body.light-mode .project-card-body h3 {
+  color: #0f172a;
+}
+body.light-mode .project-card-showcase:hover .project-card-body h3 {
+  color: #2e7d32;
+}
+body.light-mode .project-card-body p {
+  color: #475569;
+}
+body.light-mode .project-tag {
+  background: rgba(143, 148, 251, 0.05);
+  border-color: rgba(143, 148, 251, 0.1);
+  color: #4f46e5;
+}
+body.light-mode .project-card-showcase:hover .project-tag {
+  background: rgba(46, 125, 50, 0.05);
+  border-color: rgba(46, 125, 50, 0.15);
+  color: #2e7d32;
+}
