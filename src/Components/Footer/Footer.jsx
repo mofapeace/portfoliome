@@ -7,7 +7,7 @@ const Footer = () => {
         <div className="Footer-top">
             <div className="top-left">
                 <img src={Logo} alt="" />
-                <p>I am a frontend developer with 2 years of experience, also into ethical hacking with skills in Wireshark, Nmap, Burp Suite, and other tools. I am also skilled in graphics and designing using tools like PixelLab, CorelDraw, and Photoshop.</p>
+                <p>I am a Frontend Developer and Cybersecurity Enthusiast based in Cameroon, bridging the gap between high-performance user interfaces and solid systems security foundations. Specializing in secure React development, Linux system hardening, network troubleshooting, and premium digital brand design.</p>
             </div>
             <div className="top-right">
                 <div className="email-input">
@@ -19,7 +19,7 @@ const Footer = () => {
         </div>
         <hr />
         <div className="Footer-bottom">
-            <p className='bottom-left'>© 2024 Godlove Mofa. All rights reserved.</p>
+            <p className='bottom-left'>© 2026 Godlove Mofa. All rights reserved.</p>
             <div className="bottom-right">
                 <a href="#" className="footer-link">Terms of Services</a>
                 <a href="#" className="footer-link">Privacy policies</a>

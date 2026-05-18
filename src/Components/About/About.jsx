@@ -1,31 +1,63 @@
-import React, { useEffect, useState } from 'react'
+import React, { useEffect, useState, useRef } from 'react'
 import './About.css'
 import profileImg from '../../assets/About-profile.jpg'
 
 const About = () => {
   const [counts, setCounts] = useState({ exp: 0, projects: 0, clients: 0 })
+  const sectionRef = useRef(null)
 
   useEffect(() => {
-    const targets = { exp: 2, projects: 15, clients: 6 }
+    const targets = { exp: 2, projects: 20, clients: 10 }
     const duration = 1500
-    const start = performance.now()
+    let animationFrameId;
+    let hasAnimated = false;
 
-    function step(ts) {
-      const progress = Math.min((ts - start) / duration, 1)
-      setCounts({
-        exp: Math.floor(progress * targets.exp),
-        projects: Math.floor(progress * targets.projects),
-        clients: Math.floor(progress * targets.clients)
-      })
-      if (progress < 1) requestAnimationFrame(step)
-      else setCounts(targets)
+    const startAnimation = () => {
+      const start = performance.now()
+      function step(ts) {
+        const progress = Math.min((ts - start) / duration, 1)
+        setCounts({
+          exp: Math.floor(progress * targets.exp),
+          projects: Math.floor(progress * targets.projects),
+          clients: Math.floor(progress * targets.clients)
+        })
+        if (progress < 1) {
+          animationFrameId = requestAnimationFrame(step)
+        } else {
+          setCounts(targets)
+        }
+      }
+      animationFrameId = requestAnimationFrame(step)
     }
 
-    requestAnimationFrame(step)
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          if (!hasAnimated) {
+            startAnimation()
+            hasAnimated = true
+          }
+        } else {
+          // Reset count and flag when out of view, so it animates again next time you scroll past
+          cancelAnimationFrame(animationFrameId)
+          setCounts({ exp: 0, projects: 0, clients: 0 })
+          hasAnimated = false
+        }
+      })
+    }, { threshold: 0.15 })
+
+    if (sectionRef.current) {
+      observer.observe(sectionRef.current)
+    }
+
+    return () => {
+      observer.disconnect()
+      cancelAnimationFrame(animationFrameId)
+    }
   }, [])
 
   return (
-    <section id='about' className='about fade-in'>
+    <section id='about' ref={sectionRef} className='about fade-in'>
       <div className="about-title">
         <h1>About</h1>
       </div>
@@ -35,15 +67,15 @@ const About = () => {
         </div>
         <div className="about-right">
           <div className="about-p">
-            <p>I’m a frontend developer who thinks like a defender — building performant interfaces while applying security-minded practices.</p>
-            <p>I bridge UI/UX and security tooling, with experience in Linux, network scanning, and web app hardening.</p>
+            <p>I’m a Frontend Developer and Cybersecurity Enthusiast. I build highly responsive, performant React user interfaces while applying defensive security practices to keep web apps safe.</p>
+            <p>I bridge the gap between creative UI/UX design and solid systems security foundations, with strong hands-on experience in Linux configurations, secure input validations, and network scanning basics.</p>
           </div>
           <div className="about-skills">
-            <div className="about-skill"><h2>Frontend</h2><div className="skill-bar" style={{width: '80%'}}/></div>
-            <div className="about-skill"><h2>Linux</h2><div className="skill-bar" style={{width: '85%'}}/></div>
-            <div className="about-skill"><h2>Pentesting</h2><div className="skill-bar" style={{width: '65%'}}/></div>
-            <div className="about-skill"><h2>Design</h2><div className="skill-bar" style={{width: '50%'}}/></div>
-            <div className="about-skill"><h2>Network Design</h2><div className="skill-bar" style={{width: '80%'}}/></div>
+            <div className="about-skill"><h2>Frontend</h2><div className="skill-bar-container"><div className="skill-bar-progress" style={{ width: '80%' }} /></div></div>
+            <div className="about-skill"><h2>Linux</h2><div className="skill-bar-container"><div className="skill-bar-progress" style={{ width: '85%' }} /></div></div>
+            <div className="about-skill"><h2>Pentesting</h2><div className="skill-bar-container"><div className="skill-bar-progress" style={{ width: '65%' }} /></div></div>
+            <div className="about-skill"><h2>Design</h2><div className="skill-bar-container"><div className="skill-bar-progress" style={{ width: '50%' }} /></div></div>
+            <div className="about-skill"><h2>Network Design</h2><div className="skill-bar-container"><div className="skill-bar-progress" style={{ width: '80%' }} /></div></div>
           </div>
         </div>
       </div>

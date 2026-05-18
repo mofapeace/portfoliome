@@ -19,32 +19,164 @@
 .hero-main h1{ font-family: 'Source Code Pro', monospace; font-size:26px; color:#dfeffd }
 .hero-main h1 span{ color:#8ff389; opacity:0.9; margin-right:8px }
 .hero-main p{ color:#9aa6b3; margin-top:8px; line-height:1.6 }
-.hero-action{ display:flex; gap:10px; margin-top:14px }
-.hero-connect, .hero-resume{ padding:10px 18px; border-radius:10px; border:none; cursor:pointer; font-weight:700; display: inline-block; text-decoration: none; text-align: center }
-.hero-connect{ background:linear-gradient(90deg,#a8ff78,#8f94fb); color:#07101a }
+.hero-action{ display:flex; gap:10px; margin-top:14px; flex-wrap: wrap }
+.hero-connect, .hero-resume, .hero-sandbox-btn{ padding:10px 18px; border-radius:10px; cursor:pointer; font-weight:700; display: inline-block; text-decoration: none; text-align: center; transition: all 0.3s ease; font-family: inherit; font-size: 14px }
+.hero-connect{ background:linear-gradient(90deg,#a8ff78,#8f94fb); color:#07101a; border: none }
+.hero-connect:hover { transform: translateY(-2px); box-shadow: 0 4px 15px rgba(168, 255, 120, 0.25) }
+.hero-sandbox-btn { background: rgba(168, 255, 120, 0.03); border: 1px solid rgba(168, 255, 120, 0.15); color: #a8ff78 }
+.hero-sandbox-btn:hover { background: rgba(168, 255, 120, 0.08); border-color: #a8ff78; transform: translateY(-2px); box-shadow: 0 4px 15px rgba(168, 255, 120, 0.2) }
 .hero-resume{ background:transparent; border:1px solid rgba(143,148,251,0.12); color:#dfe6ef }
+.hero-resume:hover { border-color: rgba(143, 148, 251, 0.4); transform: translateY(-2px) }
 
 /* Ambient glow effect for the terminal widget */
 @keyframes ambientGlow {
-  0%, 100% { box-shadow: 0 4px 20px rgba(143,148,251,0.06), 0 0 10px rgba(143,148,251,0.04) inset; }
-  50% { box-shadow: 0 4px 30px rgba(143,148,251,0.18), 0 0 15px rgba(143,148,251,0.08) inset; }
+  0%, 100% { box-shadow: 0 4px 20px rgba(143,148,251,0.06); }
+  50% { box-shadow: 0 4px 30px rgba(143,148,251,0.18), 0 0 15px rgba(143,148,251,0.04); }
 }
 
-.hero-terminal{ background:#071018; border-radius:8px; padding:14px; color:#8fe4a2; font-family: 'Source Code Pro', monospace; font-size:12px; line-height:1.4; transition: box-shadow 0.3s ease, border-color 0.3s ease; animation: ambientGlow 8s ease-in-out infinite }
-.hero-terminal pre{ margin:0 }
+/* Shell Terminal Simulator styling */
+.hero-terminal-container {
+  background: #050b10;
+  border: 1px solid rgba(143, 148, 251, 0.08);
+  border-radius: 10px;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  height: 250px;
+  width: 100%;
+  max-width: 320px;
+  transition: border-color 0.3s ease, box-shadow 0.3s ease;
+  animation: ambientGlow 8s ease-in-out infinite;
+  cursor: text;
+  order: 3;
+}
 
-/* Blinking Terminal Cursor Animation */
-@keyframes blinkCursor {
-  from, to { opacity: 0; }
+.hero-terminal-container:hover {
+  border-color: rgba(168, 255, 120, 0.25);
+  box-shadow: 0 10px 30px rgba(143, 148, 251, 0.1);
+}
+
+.terminal-header {
+  background: #0d1217;
+  padding: 8px 12px;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.04);
+}
+
+.terminal-dot {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+}
+
+.terminal-dot.red { background: #ff5f56; }
+.terminal-dot.yellow { background: #ffbd2e; }
+.terminal-dot.green { background: #27c93f; }
+
+.terminal-title {
+  color: #9aa6b3;
+  font-size: 10px;
+  font-family: 'Source Code Pro', monospace;
+  margin-left: 8px;
+  font-weight: 500;
+}
+
+.terminal-badge {
+  margin-left: auto;
+  color: #a8ff78;
+  font-size: 8.5px;
+  font-family: 'Source Code Pro', monospace;
+  font-weight: 700;
+  animation: pulseIndicator 2s infinite ease-in-out;
+  background: rgba(168, 255, 120, 0.06);
+  padding: 2px 6px;
+  border-radius: 4px;
+  border: 1px solid rgba(168, 255, 120, 0.12);
+  white-space: nowrap;
+}
+
+@keyframes pulseIndicator {
+  0%, 100% { opacity: 0.45; }
   50% { opacity: 1; }
 }
-.terminal-cursor {
-  animation: blinkCursor 1s step-end infinite;
-  color: #8fe4a2;
-  margin-left: 2px;
+
+.terminal-body {
+  padding: 12px;
+  overflow-y: auto;
+  font-family: 'Source Code Pro', monospace;
+  font-size: 11.5px;
+  line-height: 1.5;
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  flex: 1;
+  text-align: left;
+  scrollbar-width: thin;
+  scrollbar-color: rgba(168, 255, 120, 0.2) transparent;
 }
-body.light-mode .terminal-cursor {
-  color: #0f172a;
+
+/* Custom Scrollbar for Terminal */
+.terminal-body::-webkit-scrollbar {
+  width: 8px;
+}
+.terminal-body::-webkit-scrollbar-track {
+  background: transparent;
+}
+.terminal-body::-webkit-scrollbar-thumb {
+  background: rgba(168, 255, 120, 0.2);
+  border-radius: 4px;
+  border: 2px solid transparent;
+  background-clip: padding-box;
+  transition: background 0.3s ease;
+}
+.terminal-body::-webkit-scrollbar-thumb:hover {
+  background: rgba(168, 255, 120, 0.45);
+  border: 2px solid transparent;
+  background-clip: padding-box;
+}
+
+.terminal-line {
+  word-break: break-all;
+  white-space: pre-wrap;
+}
+
+.terminal-line.info { color: #8fe4a2; }
+.terminal-line.success { color: #a8ff78; font-weight: 700; }
+.terminal-line.error { color: #ff6b6b; }
+.terminal-line.input { color: #dfeffd; }
+
+.terminal-input-line {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  width: 100%;
+}
+
+.prompt {
+  color: #8f94fb;
+  font-weight: 600;
+  white-space: nowrap;
+}
+
+.terminal-input {
+  background: transparent;
+  border: none;
+  outline: none;
+  color: #dfeffd;
+  font-family: 'Source Code Pro', monospace;
+  font-size: 11.5px;
+  width: 100%;
+  flex: 1;
+  padding: 0;
+  caret-color: #a8ff78;
+}
+
+body.light-mode .hero-terminal-container {
+  background: #050b10;
+  border-color: rgba(255, 255, 255, 0.1);
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
 }
 
 /* Floating Avatar Animation */
@@ -67,6 +199,6 @@ body.light-mode .terminal-cursor {
   .hero-left{ display:flex; justify-content:center; width:100%; margin-bottom:20px }
   .hero img{ width:160px; height:160px; border-radius:12px }
   .hero-main{ width:100%; padding:0 16px }
-  .hero-terminal{ order:3; width:100% }
+  .hero-terminal-container{ order:3; width:100%; max-width:100% }
   .hero-main{ order:2 }
 }

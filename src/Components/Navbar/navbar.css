@@ -92,3 +92,36 @@
     transform: scale(1.1);
   }
 }
+
+/* Styling button nav item identically to links */
+.sidebar-nav .nav-sandbox-btn {
+  background: transparent;
+  border: none;
+  color: #dfe6ff;
+  font-size: 18px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 44px;
+  height: 44px;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  padding: 0;
+}
+.sidebar-nav .nav-sandbox-btn:hover {
+  background: linear-gradient(90deg, var(--neon-start), var(--neon-end));
+  color: #081018;
+  box-shadow: 0 6px 18px rgba(143,148,251,0.08);
+  transform: scale(1.1);
+}
+.sidebar-nav .nav-sandbox-btn:hover svg {
+  filter: drop-shadow(0 0 8px rgba(168, 255, 120, 0.6));
+}
+
+body.light-mode .sidebar-nav .nav-sandbox-btn {
+  color: #1e293b;
+}
+body.light-mode .sidebar-nav .nav-sandbox-btn:hover {
+  color: #081018;
+}

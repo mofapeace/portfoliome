@@ -11,17 +11,17 @@ body{
   font-family: 'Outfit', sans-serif;
 }
 
-/* Offset content from left sidebar on wide screens (excludes #about) */
+/* Offset content from left sidebar on wide screens */
 @media (min-width:1080px) {
   :root { --sidebar-width: 72px; --sidebar-gap: 24px; }
-  #home, #services, #contact, .Footer, .projects, .services, .Contact {
+  #home, #about, #certifications, #services, #contact, .Footer, .projects, .services, .Contact, .about, .certifications {
     padding-left: calc(var(--sidebar-width) + var(--sidebar-gap));
     transition: padding-left .18s ease;
   }
 }
 
 @media (max-width:1079px) {
-  #home, #services, #contact, .Footer, .projects, .services, .Contact {
+  #home, #about, #certifications, #services, #contact, .Footer, .projects, .services, .Contact, .about, .certifications {
     padding-left: 0;
   }
 }
@@ -123,7 +123,7 @@ body.light-mode .about-skill:hover {
 body.light-mode .about-skill:hover h2 {
   color: #2e7d32;
 }
-body.light-mode .about-skill:hover .skill-bar {
+body.light-mode .about-skill:hover .skill-bar-container {
   box-shadow: 0 0 15px rgba(143, 148, 251, 0.4);
 }
 body.light-mode .about-archivement {
@@ -145,6 +145,10 @@ body.light-mode .services-card {
   border-color: rgba(0,0,0,0.08);
   color: #0f172a;
   box-shadow: 0 4px 12px rgba(0,0,0,0.02);
+}
+body.light-mode .services-card:hover {
+  border-color: rgba(143,148,251,0.3);
+  box-shadow: 0 15px 30px rgba(0,0,0,0.04), 0 0 18px rgba(143,148,251,0.08);
 }
 body.light-mode .services-card p {
   color: #475569;
@@ -176,11 +180,11 @@ body.light-mode .service-details h3 {
   color: #1b8a13;
 }
 
-/* Contact Section */
 body.light-mode .Contact-title h1 {
-  background: linear-gradient(90deg, #2e7d32, #4f46e5);
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
+  color: #2e7d32;
+  background: none;
+  -webkit-background-clip: initial;
+  -webkit-text-fill-color: initial;
 }
 body.light-mode .Contact-title p {
   color: #475569;

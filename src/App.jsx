@@ -1,23 +1,44 @@
-import React from 'react'
+import React, { useState } from 'react'
 import Navbar from './Components/Navbar/navbar'
 import Hero from './Components/Hero/Hero'
 import About from './Components/About/About'
-import Service from './Components/Services/Service'
+import Certifications from './Components/Certifications/Certifications'
 import Projects from './Components/Projects/Projects'
+import Service from './Components/Services/Service'
 import Contact from './Components/Contact/Contact'
 import Footer from './Components/Footer/Footer'
+import AllProjects from './Components/Projects/AllProjects'
+import SecuritySandbox from './Components/Sandbox/SecuritySandbox'
 import { Analytics } from "@vercel/analytics/react"
+
 const App = () => {
+  const [view, setView] = useState('home'); // 'home', 'all-projects', or 'sandbox'
+
   return (
     <div>
-      <Navbar />
-      <Hero/>
-      <About/>
-      <Service/>
-      <Projects/>
-      <Contact/>
-      <Footer/>
-      <Analytics/>
+      {view === 'home' ? (
+        <>
+          <Navbar setView={setView} />
+          <Hero setView={setView} />
+          <About />
+          <Certifications />
+          <Projects setView={setView} />
+          <Service />
+          <Contact />
+          <Footer />
+        </>
+      ) : view === 'all-projects' ? (
+        <>
+          <AllProjects setView={setView} />
+          <Footer />
+        </>
+      ) : (
+        <>
+          <SecuritySandbox setView={setView} />
+          <Footer />
+        </>
+      )}
+      <Analytics />
     </div>
   )
 }

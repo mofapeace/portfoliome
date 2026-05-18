@@ -4,7 +4,7 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faExternalLinkAlt, faCode, faNetworkWired, faShieldHalved, faLaptopCode, faPalette } from '@fortawesome/free-solid-svg-icons';
 import { faGithub } from '@fortawesome/free-brands-svg-icons';
 
-const Projects = () => {
+const Projects = ({ setView }) => {
   const [filter, setFilter] = useState('all');
 
   const projectList = [
@@ -114,6 +114,12 @@ const Projects = () => {
             </div>
           </article>
         ))}
+      </div>
+
+      <div className="projects-more-cta">
+        <button onClick={() => { setView('all-projects'); window.scrollTo({ top: 0, behavior: 'instant' }); }} className="see-more-btn">
+          See More Projects <FontAwesomeIcon icon={faExternalLinkAlt} />
+        </button>
       </div>
     </section>
   );

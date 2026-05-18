@@ -176,3 +176,37 @@
     margin: 12px auto 0;
   }
 }
+
+/* See More CTA Button styling */
+.projects-more-cta {
+  display: flex;
+  justify-content: center;
+  width: 100%;
+  margin-top: 14px;
+}
+
+.see-more-btn {
+  background: linear-gradient(90deg, #a8ff78, #8f94fb);
+  color: #081018;
+  border: none;
+  padding: 12px 24px;
+  font-size: 14px;
+  font-weight: 700;
+  border-radius: 50px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  box-shadow: 0 5px 15px rgba(168, 255, 120, 0.15);
+  transition: transform 0.25s cubic-bezier(0.175, 0.885, 0.32, 1.275), box-shadow 0.25s ease, background 0.25s ease;
+}
+
+.see-more-btn:hover {
+  transform: translateY(-4px) scale(1.03);
+  box-shadow: 0 10px 25px rgba(168, 255, 120, 0.3), 0 0 12px rgba(143, 148, 251, 0.2);
+}
+
+.see-more-btn:active {
+  transform: translateY(-1px) scale(0.98);
+}
+

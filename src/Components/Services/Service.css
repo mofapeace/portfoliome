@@ -5,15 +5,16 @@
 .services-section{ display:flex; flex-direction:column; gap:18px }
 .services-cards{ display:flex; gap:18px; flex-wrap:wrap }
 .services-card-wrapper{ flex:1; min-width:280px; display:flex; flex-direction:column }
-.services-card{ background:#081018; border:1px solid rgba(143,148,251,0.06); color:#dcebf2; padding:18px; border-radius:10px; cursor:pointer; transition: transform 0.3s cubic-bezier(0.165, 0.84, 0.44, 1), border-color 0.3s ease, box-shadow 0.3s ease }
-.services-card:hover { transform: translateY(-5px); border-color: rgba(143,148,251,0.25); box-shadow: 0 10px 25px rgba(143,148,251,0.08) }
-.services-card i{ font-size:22px; color:#8f94fb; margin-bottom:8px; transition: transform 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275), color 0.3s ease; display: inline-block }
-.services-card:hover i { transform: scale(1.18) rotate(6deg); color: #a8ff78 }
-.services-card h2{ font-size:16px; margin:0 0 6px }
-.services-card p{ color:#9aa6b3; font-size:13px }
-.card-cta{ margin-top:12px; font-size:13px; color:#a8ff78; font-weight:700; transition: color 0.3s ease, transform 0.3s ease; display: inline-block }
+.services-card{ background:#081018; border:1px solid rgba(143,148,251,0.05); color:#dcebf2; padding:24px; border-radius:12px; cursor:pointer; display:flex; flex-direction:column; gap:16px; transition: transform 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275), border-color 0.4s ease, box-shadow 0.4s ease }
+.services-card:hover { transform: translateY(-8px) scale(1.015); border-color: rgba(168, 255, 120, 0.25); box-shadow: 0 20px 40px rgba(0, 0, 0, 0.55), 0 0 22px rgba(143, 148, 251, 0.08) }
+.services-card i{ font-size:26px; color:#8f94fb; margin-bottom:0; transition: transform 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275), color 0.3s ease; display: inline-block }
+.services-card:hover i { transform: scale(1.2) rotate(6deg); color: #a8ff78 }
+.services-card h2{ font-size:18px; font-weight:700; margin:0; transition: color 0.3s ease }
+.services-card:hover h2 { color: #a8ff78 }
+.services-card p{ color:#9aa6b3; font-size:13.5px; line-height:1.55 }
+.card-cta{ margin-top:auto; font-size:13px; color:#a8ff78; font-weight:700; transition: color 0.3s ease, transform 0.3s ease; display: inline-block }
 .services-card:hover .card-cta { color: #8f94fb; transform: translateX(3px) }
-.services-card.active{ transform:translateY(-8px) scale(1.01); border-color: rgba(168,255,120,0.3); box-shadow:0 20px 40px rgba(0,0,0,0.5), 0 0 25px rgba(143,148,251,0.12) }
+.services-card.active{ transform:translateY(-8px) scale(1.015); border-color: rgba(168,255,120,0.3); box-shadow:0 20px 40px rgba(0,0,0,0.5), 0 0 25px rgba(143,148,251,0.12) }
 
 .service-details{ max-height:0; overflow:hidden; transition:max-height .36s ease, opacity .28s; opacity:0; margin-top:0 }
 .service-details.open{ max-height:600px; opacity:1; margin-top:18px }
