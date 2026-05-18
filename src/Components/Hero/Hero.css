@@ -199,6 +199,6 @@ body.light-mode .hero-terminal-container {
   .hero-left{ display:flex; justify-content:center; width:100%; margin-bottom:20px }
   .hero img{ width:160px; height:160px; border-radius:12px }
   .hero-main{ width:100%; padding:0 16px }
-  .hero-terminal-container{ order:3; width:100%; max-width:100% }
+  .hero-terminal-container{ order:3; width:90%; max-width:360px; margin: 20px auto 0 auto; }
   .hero-main{ order:2 }
 }

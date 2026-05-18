@@ -14,12 +14,12 @@ const SecuritySandbox = ({ setView }) => {
     { id: 3, type: 'success', msg: 'GET /assets/logo.jpg completed 200 OK in 14ms from 198.51.100.4 (FR)' }
   ]);
 
-  const logEndRef = useRef(null);
+  const firewallConsoleRef = useRef(null);
 
-  // Auto-scroll firewall logs
+  // Auto-scroll firewall logs internally
   useEffect(() => {
-    if (logEndRef.current) {
-      logEndRef.current.scrollIntoView({ behavior: 'smooth' });
+    if (firewallConsoleRef.current) {
+      firewallConsoleRef.current.scrollTop = firewallConsoleRef.current.scrollHeight;
     }
   }, [trafficLogs]);
 
@@ -157,14 +157,13 @@ const SecuritySandbox = ({ setView }) => {
             <p>Simulating packet captures flowing to Godlove Mofa's host server in real-time.</p>
           </div>
           <div className="card-body">
-            <div className="firewall-console">
+            <div className="firewall-console" ref={firewallConsoleRef}>
               {trafficLogs.map((log) => (
                 <div key={log.id} className={`firewall-line ${log.type}`}>
                   <span className="log-timestamp">[{new Date().toLocaleTimeString()}]</span>
                   <span className="log-message">{log.msg}</span>
                 </div>
               ))}
-              <div ref={logEndRef} />
             </div>
           </div>
         </section>

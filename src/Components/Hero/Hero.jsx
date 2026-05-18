@@ -8,13 +8,13 @@ const Hero = ({ setView }) => {
     { text: 'Type "help" to view available simulator commands.', type: 'info' }
   ]);
   const [inputValue, setInputValue] = useState('');
-  const terminalEndRef = useRef(null);
+  const terminalBodyRef = useRef(null);
   const inputRef = useRef(null);
 
-  // Auto-scroll terminal to bottom
+  // Auto-scroll terminal container
   useEffect(() => {
-    if (terminalEndRef.current) {
-      terminalEndRef.current.scrollIntoView({ behavior: 'smooth' });
+    if (terminalBodyRef.current) {
+      terminalBodyRef.current.scrollTop = terminalBodyRef.current.scrollHeight;
     }
   }, [history]);
 
@@ -149,7 +149,7 @@ const Hero = ({ setView }) => {
           <span className="terminal-title">bash - guest@mofapeace:~</span>
           <span className="terminal-badge">● INTERACTIVE - CLICK TO TYPE</span>
         </div>
-        <div className="terminal-body">
+        <div className="terminal-body" ref={terminalBodyRef}>
           {history.map((line, index) => (
             <div key={index} className={`terminal-line ${line.type}`}>
               {line.text}
@@ -172,7 +172,6 @@ const Hero = ({ setView }) => {
               maxLength="36"
             />
           </div>
-          <div ref={terminalEndRef} />
         </div>
       </div>
     </header>
