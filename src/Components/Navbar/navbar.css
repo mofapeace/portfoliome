@@ -47,7 +47,26 @@
   .mobile-nav-toggle:active{ transform: scale(0.96) }
   
   /* Mobile sidebar - fixed, centered vertically, slide in/out */
-  .mobile-sidebar{ display:flex; flex-direction:column; align-items:center; gap:16px; position:fixed; left:18px; top:50%; transform:translateY(-50%); width:72px; border-radius:12px; padding:14px 10px; background: rgba(8,10,12,0.55); backdrop-filter: blur(6px); box-shadow:0 10px 30px rgba(0,0,0,0.55); z-index:999; transition: all 0.3s ease }
+  .mobile-sidebar {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 16px;
+    position: fixed;
+    left: 18px;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 72px;
+    border-radius: 12px;
+    padding: 14px 10px;
+    background: rgba(15, 23, 42, 0.35);
+    backdrop-filter: blur(20px);
+    -webkit-backdrop-filter: blur(20px);
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    box-shadow: 0 10px 40px rgba(0, 0, 0, 0.25);
+    z-index: 999;
+    transition: all 0.3s ease;
+  }
   .mobile-sidebar.open{ opacity:1; pointer-events:auto }
   .mobile-sidebar:not(.open){ opacity:0; pointer-events:none; transform:translateY(-50%) scale(0.8) }
   .mobile-sidebar .sidebar-logo{ width:56px; height:56px; border-radius:8px; object-fit:cover }
@@ -65,7 +84,25 @@
   .mobile-nav-toggle{ display:none !important }
   .mobile-sidebar{ display:none !important }
   /* make the sidebar vertically centered and a bit more transparent */
-  .sidebar{ display:flex; flex-direction:column; align-items:center; gap:16px; position:fixed; left:18px; top:50%; transform:translateY(-50%); width:72px; border-radius:12px; padding:14px 10px; background: rgba(8,10,12,0.55); backdrop-filter: blur(6px); box-shadow:0 10px 30px rgba(0,0,0,0.55); z-index:1000 }
+  .sidebar {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 16px;
+    position: fixed;
+    left: 18px;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 72px;
+    border-radius: 12px;
+    padding: 14px 10px;
+    background: rgba(15, 23, 42, 0.35);
+    backdrop-filter: blur(20px);
+    -webkit-backdrop-filter: blur(20px);
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    box-shadow: 0 10px 40px rgba(0, 0, 0, 0.25);
+    z-index: 1000;
+  }
   .sidebar-logo{ width:56px; height:56px; border-radius:8px; object-fit:cover }
   .sidebar-nav ul{ list-style:none; padding:0; margin:8px 0; display:flex; flex-direction:column; gap:12px; align-items:center }
   .sidebar-nav a{ color:#dfe6ff; font-size:18px; display:flex; align-items:center; justify-content:center; width:44px; height:44px; border-radius:8px; transition: all 0.3s ease }
@@ -124,4 +161,20 @@ body.light-mode .sidebar-nav .nav-sandbox-btn {
 }
 body.light-mode .sidebar-nav .nav-sandbox-btn:hover {
   color: #081018;
+}
+
+/* Light mode Apple glass overrides */
+body.light-mode .sidebar,
+body.light-mode .mobile-sidebar {
+  background: rgba(255, 255, 255, 0.4);
+  border-color: rgba(0, 0, 0, 0.06);
+  box-shadow: 0 10px 40px rgba(0, 0, 0, 0.06);
+}
+
+body.light-mode .sidebar-nav a {
+  color: #475569;
+}
+
+body.light-mode .theme-toggle-btn {
+  color: #475569;
 }
