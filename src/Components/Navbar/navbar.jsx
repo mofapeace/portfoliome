@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import AnchorLink from "react-anchor-link-smooth-scroll";
 import './navbar.css';
 import Logo from "../../assets/logo.jpg";
@@ -9,11 +9,24 @@ import { faGithub, faLinkedin } from "@fortawesome/free-brands-svg-icons";
 
 export default function Navbar({ setView }) {
   const [open, setOpen] = useState(false);
-  const [isLight, setIsLight] = useState(false);
+  const [isLight, setIsLight] = useState(() => {
+    const saved = localStorage.getItem('portfolio-theme');
+    // Default to 'light' (true) if nothing is saved!
+    return saved ? saved === 'light' : true;
+  });
+
+  useEffect(() => {
+    if (isLight) {
+      document.body.classList.add('light-mode');
+      localStorage.setItem('portfolio-theme', 'light');
+    } else {
+      document.body.classList.remove('light-mode');
+      localStorage.setItem('portfolio-theme', 'dark');
+    }
+  }, [isLight]);
 
   const toggleTheme = () => {
-    setIsLight(!isLight);
-    document.body.classList.toggle('light-mode');
+    setIsLight(prev => !prev);
   };
 
   return (
