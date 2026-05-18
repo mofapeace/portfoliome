@@ -10,15 +10,16 @@ import Footer from './Components/Footer/Footer'
 import AllProjects from './Components/Projects/AllProjects'
 import SecuritySandbox from './Components/Sandbox/SecuritySandbox'
 import { Analytics } from "@vercel/analytics/react"
+import ScrollToTop from './Components/ScrollToTop/ScrollToTop'
 
 const App = () => {
   const [view, setView] = useState('home'); // 'home', 'all-projects', or 'sandbox'
 
   return (
     <div>
+      <Navbar setView={setView} currentView={view} />
       {view === 'home' ? (
         <>
-          <Navbar setView={setView} />
           <Hero setView={setView} />
           <About />
           <Certifications />
@@ -38,6 +39,7 @@ const App = () => {
           <Footer />
         </>
       )}
+      <ScrollToTop />
       <Analytics />
     </div>
   )

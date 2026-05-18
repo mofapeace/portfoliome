@@ -14,7 +14,7 @@ body{
 /* Offset content from left sidebar on wide screens */
 @media (min-width:1080px) {
   :root { --sidebar-width: 72px; --sidebar-gap: 24px; }
-  #home, #about, #certifications, #services, #contact, .Footer, .projects, .services, .Contact, .about, .certifications {
+  #home, #about, #certifications, #services, #contact, .Footer, .projects, .services, .Contact, .about, .certifications, .all-projects-container, .sandbox-container {
     padding-left: calc(var(--sidebar-width) + var(--sidebar-gap));
     transition: padding-left .18s ease;
   }
