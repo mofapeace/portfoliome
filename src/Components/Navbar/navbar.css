@@ -152,7 +152,7 @@
   /* Hover states */
   .sidebar-nav a:hover,
   .sidebar-nav .nav-sandbox-btn:hover {
-    background: linear-gradient(90deg, var(--neon-start), var(--neon-end));
+    background: var(--neon-end);
     color: #081018;
     box-shadow: 0 6px 20px rgba(143, 148, 251, 0.25);
     transform: scale(1.08);
@@ -206,7 +206,7 @@
     transition: all 0.3s ease;
   }
   .theme-toggle-btn:hover {
-    background: linear-gradient(90deg, var(--neon-start), var(--neon-end));
+    background: var(--neon-end);
     color: #081018;
     transform: scale(1.08);
   }
@@ -403,8 +403,8 @@ body.light-mode .theme-toggle-btn {
 body.light-mode .sidebar-nav a:hover,
 body.light-mode .sidebar-nav .nav-sandbox-btn:hover,
 body.light-mode .theme-toggle-btn:hover {
-  background: linear-gradient(90deg, var(--neon-start), var(--neon-end));
-  color: #081018;
+  background: #4f46e5;
+  color: #ffffff;
 }
 
 body.light-mode .sidebar-nav li.active a,

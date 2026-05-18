@@ -55,10 +55,10 @@
 }
 
 .filter-tabs button.active {
-  background: linear-gradient(90deg, #a8ff78, #8f94fb);
+  background: #a8ff78;
   color: #081018;
   border-color: transparent;
-  box-shadow: 0 5px 15px rgba(143, 148, 251, 0.15);
+  box-shadow: 0 4px 12px rgba(168, 255, 120, 0.15);
 }
 
 /* Showcase Grid */
@@ -186,7 +186,7 @@
 }
 
 .see-more-btn {
-  background: linear-gradient(90deg, #a8ff78, #8f94fb);
+  background: #a8ff78;
   color: #081018;
   border: none;
   padding: 12px 24px;
@@ -197,13 +197,14 @@
   display: flex;
   align-items: center;
   gap: 8px;
-  box-shadow: 0 5px 15px rgba(168, 255, 120, 0.15);
+  box-shadow: 0 4px 12px rgba(168, 255, 120, 0.15);
   transition: transform 0.25s cubic-bezier(0.175, 0.885, 0.32, 1.275), box-shadow 0.25s ease, background 0.25s ease;
 }
 
 .see-more-btn:hover {
+  background: #8f94fb;
   transform: translateY(-4px) scale(1.03);
-  box-shadow: 0 10px 25px rgba(168, 255, 120, 0.3), 0 0 12px rgba(143, 148, 251, 0.2);
+  box-shadow: 0 10px 25px rgba(143, 148, 251, 0.3), 0 0 12px rgba(168, 255, 120, 0.25);
 }
 
 .see-more-btn:active {

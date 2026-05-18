@@ -116,7 +116,7 @@
 
 /* Auditing Actions styling */
 .scan-btn {
-  background: linear-gradient(90deg, #a8ff78, #8f94fb);
+  background: #a8ff78;
   color: #07101a;
   border: none;
   font-weight: 700;
@@ -130,12 +130,13 @@
   gap: 8px;
   width: 100%;
   transition: all 0.3s ease;
-  box-shadow: 0 4px 12px rgba(168, 255, 120, 0.2);
+  box-shadow: 0 4px 12px rgba(168, 255, 120, 0.15);
 }
 
 .scan-btn:hover:not(.disabled) {
+  background: #8f94fb;
   transform: translateY(-2px);
-  box-shadow: 0 6px 20px rgba(168, 255, 120, 0.3);
+  box-shadow: 0 6px 20px rgba(143, 148, 251, 0.25);
 }
 
 .scan-btn.disabled {
@@ -156,7 +157,7 @@
 }
 
 .audit-progress-fill {
-  background: linear-gradient(90deg, #a8ff78, #8f94fb);
+  background: #a8ff78;
   height: 100%;
   border-radius: 10px;
   transition: width 0.3s ease;

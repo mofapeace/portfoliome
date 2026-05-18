@@ -14,7 +14,7 @@ body{
 /* Offset content from left sidebar on wide screens */
 @media (min-width:1080px) {
   :root { --sidebar-width: 72px; --sidebar-gap: 24px; }
-  #home, #about, #certifications, #services, #contact, .Footer, .projects, .services, .Contact, .about, .certifications, .all-projects-container, .sandbox-container {
+  #home, #about, #certifications, #services, #contact, .Footer, .projects, .services, .Contact, .about, .certifications, .all-projects-container, .sandbox-container, .blog-container {
     padding-left: calc(var(--sidebar-width) + var(--sidebar-gap));
     transition: padding-left .18s ease;
   }
@@ -62,8 +62,8 @@ body.light-mode .mobile-sidebar .sidebar-nav a {
 }
 body.light-mode .sidebar-nav a:hover,
 body.light-mode .mobile-sidebar .sidebar-nav a:hover {
-  color: #0f172a;
-  background: linear-gradient(90deg, #a8ff78, #8f94fb);
+  color: #ffffff;
+  background: #4f46e5;
 }
 body.light-mode .theme-toggle-btn {
   color: #475569;
@@ -214,8 +214,12 @@ body.light-mode .Contact-right textarea:focus {
   border-color: rgba(79,70,229,0.3);
 }
 body.light-mode .Contact-submit {
-  background: linear-gradient(90deg, #2e7d32, #4f46e5);
+  background: #2e7d32;
   color: #ffffff;
+  transition: background 0.25s ease;
+}
+body.light-mode .Contact-submit:hover {
+  background: #4f46e5;
 }
 
 /* Footer Section */
@@ -237,8 +241,12 @@ body.light-mode .email-input i {
   color: #475569;
 }
 body.light-mode .subscribe {
-  background: linear-gradient(90deg, #2e7d32, #4f46e5);
+  background: #2e7d32;
   color: #ffffff;
+  transition: background 0.25s ease;
+}
+body.light-mode .subscribe:hover {
+  background: #4f46e5;
 }
 body.light-mode .Footer-bottom {
   color: #475569;
@@ -268,10 +276,10 @@ body.light-mode .filter-tabs button:hover {
   color: #0f172a;
 }
 body.light-mode .filter-tabs button.active {
-  background: linear-gradient(90deg, #2e7d32, #4f46e5);
+  background: #2e7d32;
   color: #ffffff;
   border-color: transparent;
-  box-shadow: 0 5px 15px rgba(79, 70, 229, 0.15);
+  box-shadow: 0 4px 12px rgba(46, 125, 50, 0.15);
 }
 body.light-mode .project-card-showcase {
   background: #ffffff;

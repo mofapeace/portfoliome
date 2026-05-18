@@ -9,6 +9,7 @@ import Contact from './Components/Contact/Contact'
 import Footer from './Components/Footer/Footer'
 import AllProjects from './Components/Projects/AllProjects'
 import SecuritySandbox from './Components/Sandbox/SecuritySandbox'
+import Blog from './Components/Blog/Blog'
 import { Analytics } from "@vercel/analytics/react"
 import ScrollToTop from './Components/ScrollToTop/ScrollToTop'
 
@@ -31,6 +32,11 @@ const App = () => {
       ) : view === 'all-projects' ? (
         <>
           <AllProjects setView={setView} />
+          <Footer />
+        </>
+      ) : view === 'blog' ? (
+        <>
+          <Blog setView={setView} />
           <Footer />
         </>
       ) : (

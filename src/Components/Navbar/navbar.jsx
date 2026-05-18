@@ -3,7 +3,7 @@ import './navbar.css';
 import Logo from "../../assets/logo.jpg";
 
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faBars, faTimes, faHome, faUser, faFolderOpen, faEnvelope, faBriefcase, faSun, faMoon, faCertificate, faShieldHalved } from "@fortawesome/free-solid-svg-icons";
+import { faBars, faTimes, faHome, faUser, faFolderOpen, faEnvelope, faBriefcase, faSun, faMoon, faCertificate, faShieldHalved, faBlog } from "@fortawesome/free-solid-svg-icons";
 import { faGithub, faLinkedin } from "@fortawesome/free-brands-svg-icons";
 
 export default function Navbar({ setView, currentView }) {
@@ -33,6 +33,10 @@ export default function Navbar({ setView, currentView }) {
   useEffect(() => {
     if (currentView === 'sandbox') {
       setActiveSection('sandbox');
+      return;
+    }
+    if (currentView === 'blog') {
+      setActiveSection('blog');
       return;
     }
     if (currentView === 'all-projects') {
@@ -77,6 +81,7 @@ export default function Navbar({ setView, currentView }) {
     { id: 'certifications', type: 'anchor', title: 'Certifications', icon: faCertificate },
     { id: 'projects', type: 'anchor', title: 'Projects', icon: faFolderOpen },
     { id: 'services', type: 'anchor', title: 'Services', icon: faBriefcase },
+    { id: 'blog', type: 'view', title: 'Technical Blog', icon: faBlog },
     { id: 'sandbox', type: 'view', title: 'Security Sandbox', icon: faShieldHalved },
     { id: 'contact', type: 'anchor', title: 'Contact', icon: faEnvelope },
     { id: 'github', type: 'external', title: 'GitHub', icon: faGithub, url: 'https://github.com/mofapeace' },
@@ -88,8 +93,8 @@ export default function Navbar({ setView, currentView }) {
     
     e.preventDefault();
     
-    if (item.id === 'sandbox') {
-      setView('sandbox');
+    if (item.type === 'view') {
+      setView(item.id);
       setOpen(false);
       window.scrollTo(0, 0);
       return;

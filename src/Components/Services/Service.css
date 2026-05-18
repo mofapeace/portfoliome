@@ -22,7 +22,7 @@
 .projects-grid{ display:grid; grid-template-columns: repeat(auto-fill, minmax(220px, 1fr)); gap:12px }
 .project-card{ background:#071018; border:1px solid rgba(143,148,251,0.04); padding:12px; border-radius:8px; display:flex; gap:10px; align-items:center; cursor:pointer; transition: transform 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275), border-color 0.3s ease, box-shadow 0.3s ease }
 .project-card:hover { transform: translateY(-6px) scale(1.02); border-color: rgba(168,255,120,0.25); box-shadow: 0 10px 25px rgba(143,148,251,0.08), 0 0 12px rgba(168,255,120,0.04) }
-.project-img{ width:72px; height:72px; border-radius:8px; background:linear-gradient(90deg,#a8ff78,#8f94fb); display:flex; align-items:center; justify-content:center; color:#071018; font-weight:800; transition: transform 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275), box-shadow 0.3s ease }
+.project-img{ width:72px; height:72px; border-radius:8px; background:#8f94fb; display:flex; align-items:center; justify-content:center; color:#071018; font-weight:800; transition: transform 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275), box-shadow 0.3s ease }
 .project-card:hover .project-img { transform: scale(1.06) rotate(4deg); box-shadow: 0 5px 12px rgba(143,148,251,0.2) }
 .project-info h4{ margin:0; font-size:14px; color:#e6eef0; transition: color 0.3s ease }
 .project-card:hover h4 { color: #a8ff78 }
