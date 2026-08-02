@@ -52,7 +52,7 @@ const AllProjects = ({ setView }) => {
       description: 'A curated creative design portfolio showcasing interactive Figma app prototypes, custom company logos, high-resolution vector flyers, and dynamic print-ready branding systems.',
       icon: faPalette,
       github: 'https://github.com/mofapeace',
-      demo: 'https://mofagodlove.vercel.app/'
+      demo: '/design'
     },
     {
       id: 5,
