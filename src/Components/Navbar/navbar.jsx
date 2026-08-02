@@ -7,7 +7,6 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faBars, faTimes, faHome, faUser, faFolderOpen, faEnvelope, faBriefcase, faSun, faMoon, faCertificate } from "@fortawesome/free-solid-svg-icons";
 
 export default function Navbar({ setView, currentView }) {
-  const [open, setOpen] = useState(false);
   const navigate = useNavigate();
   const location = useLocation();
   const [isLight, setIsLight] = useState(() => {
@@ -85,7 +84,6 @@ export default function Navbar({ setView, currentView }) {
     
     if (item.type === 'view') {
       setView(item.id);
-      setOpen(false);
       if (location.pathname !== '/') navigate('/');
       window.scrollTo(0, 0);
       return;
@@ -94,7 +92,6 @@ export default function Navbar({ setView, currentView }) {
     if (location.pathname !== '/') {
       navigate('/');
       setView('home');
-      setOpen(false);
       setTimeout(() => {
         const el = document.getElementById(item.id);
         if (el) {
@@ -106,7 +103,6 @@ export default function Navbar({ setView, currentView }) {
 
     if (currentView !== 'home') {
       setView('home');
-      setOpen(false);
       setTimeout(() => {
         const el = document.getElementById(item.id);
         if (el) {
@@ -114,7 +110,6 @@ export default function Navbar({ setView, currentView }) {
         }
       }, 150);
     } else {
-      setOpen(false);
       const el = document.getElementById(item.id);
       if (el) {
         el.scrollIntoView({ behavior: 'smooth' });
@@ -175,18 +170,6 @@ export default function Navbar({ setView, currentView }) {
 
   return (
     <>
-      {/* MOBILE NAV TOGGLE BUTTON (only on small screens) */}
-      <button 
-        onClick={() => setOpen(!open)} 
-        className="mobile-nav-toggle" 
-        aria-label="Toggle navigation"
-      >
-        <FontAwesomeIcon icon={open ? faTimes : faBars} />
-      </button>
-
-      {/* MOBILE OVERLAY (closes drawer when clicked outside) */}
-      {open && <div className="mobile-nav-overlay" onClick={() => setOpen(false)} />}
-
       {/* LEFT SIDEBAR (Ubuntu-like) - shown on wide screens */}
       <aside className="sidebar">
         <div className="sidebar-top">
@@ -204,11 +187,8 @@ export default function Navbar({ setView, currentView }) {
         </div>
       </aside>
 
-      {/* MOBILE SIDEBAR (toggleable, same style as PC) */}
-      <aside className={`mobile-sidebar ${open ? 'open' : ''}`}>
-        <div className="sidebar-top">
-          <img src={Logo} alt="logo" className="sidebar-logo" />
-        </div>
+      {/* BOTTOM NAVIGATION (Mobile & Tablet) */}
+      <aside className="mobile-sidebar">
         <nav className="sidebar-nav">
           <ul>
             {navItems.map((item, index) => renderNavItem(item, index))}

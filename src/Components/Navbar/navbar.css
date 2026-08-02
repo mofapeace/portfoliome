@@ -218,116 +218,76 @@
 @media (max-width: 1079px) {
   /* Neon mobile trigger button */
   .mobile-nav-toggle {
-    position: fixed;
-    top: 18px;
-    left: 18px;
-    background: rgba(15, 23, 42, 0.6);
-    backdrop-filter: blur(12px);
-    -webkit-backdrop-filter: blur(12px);
-    border: 1px solid rgba(168, 255, 120, 0.25);
-    color: var(--neon-start);
-    font-size: 20px;
-    z-index: 1001;
-    cursor: pointer;
-    width: 44px;
-    height: 44px;
-    border-radius: 10px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
-    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
-  }
-  .mobile-nav-toggle:hover {
-    border-color: var(--neon-start);
-    box-shadow: 0 0 15px rgba(168, 255, 120, 0.4);
-    transform: scale(1.05);
-  }
-  .mobile-nav-toggle:active {
-    transform: scale(0.95);
+    display: none !important;
   }
 
   /* Overlay */
   .mobile-nav-overlay {
-    position: fixed;
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    background: rgba(0, 0, 0, 0.5);
-    backdrop-filter: blur(6px);
-    -webkit-backdrop-filter: blur(6px);
-    z-index: 998;
-    animation: overlayFadeIn 0.3s ease both;
+    display: none !important;
   }
 
-  /* Mobile Drawer Sliding Panel */
+  /* Mobile Bottom Navigation Bar */
   .mobile-sidebar {
     display: flex;
-    flex-direction: column;
+    flex-direction: row;
     align-items: center;
-    gap: 16px;
+    justify-content: center;
+    gap: 8px;
     position: fixed;
-    left: 18px;
-    top: 50%;
-    transform: translateY(-50%) scale(0.9);
-    width: 68px;
+    bottom: 18px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: auto;
+    max-width: 90vw;
     border-radius: 16px;
-    padding: 16px 10px;
+    padding: 12px 16px;
     background: rgba(15, 23, 42, 0.8);
     backdrop-filter: blur(24px);
     -webkit-backdrop-filter: blur(24px);
     border: 1px solid rgba(255, 255, 255, 0.08);
     box-shadow: 0 20px 50px rgba(0, 0, 0, 0.4);
     z-index: 999;
-    opacity: 0;
-    pointer-events: none;
-    transition: all 0.3s cubic-bezier(0.34, 1.56, 0.64, 1);
+    opacity: 1;
+    pointer-events: auto;
   }
   .mobile-sidebar.open {
     opacity: 1;
     pointer-events: auto;
-    transform: translateY(-50%) scale(1);
   }
 
   .mobile-sidebar .sidebar-logo {
-    width: 44px;
-    height: 44px;
-    border-radius: 8px;
-    object-fit: cover;
-    border: 1px solid rgba(255, 255, 255, 0.1);
+    display: none;
   }
 
   .mobile-sidebar .sidebar-nav ul {
     list-style: none;
     padding: 0;
-    margin: 8px 0;
+    margin: 0;
     display: flex;
-    flex-direction: column;
-    gap: 10px;
+    flex-direction: row;
+    gap: 6px;
     align-items: center;
   }
 
   .mobile-sidebar .sidebar-nav li {
     position: relative;
-    opacity: 0;
-    transform: translateX(-15px);
+    opacity: 1;
+    transform: translateX(0);
     transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
   }
   .mobile-sidebar.open .sidebar-nav li {
-    animation: itemSlideIn 0.4s cubic-bezier(0.25, 1, 0.5, 1) both;
-    animation-delay: calc(var(--i) * 0.035s);
+    animation: none;
   }
 
   .mobile-sidebar .sidebar-nav a,
   .mobile-sidebar .sidebar-nav .nav-sandbox-btn {
     color: #dfe6ff;
-    font-size: 18px;
+    font-size: 16px;
     display: flex;
     align-items: center;
     justify-content: center;
-    width: 40px;
-    height: 40px;
+    width: 36px;
+    height: 36px;
     border-radius: 8px;
     background: transparent;
     border: 1px solid transparent;
@@ -364,16 +324,19 @@
   }
 
   .mobile-sidebar .sidebar-bottom {
-    margin-top: 8px;
+    margin-top: 0;
+    margin-left: 6px;
+    border-left: 1px solid rgba(255, 255, 255, 0.1);
+    padding-left: 6px;
   }
 
   .mobile-sidebar .theme-toggle-btn {
     background: transparent;
     border: none;
     color: #dfe6ff;
-    font-size: 18px;
-    width: 40px;
-    height: 40px;
+    font-size: 16px;
+    width: 36px;
+    height: 36px;
     border-radius: 8px;
     display: flex;
     align-items: center;
