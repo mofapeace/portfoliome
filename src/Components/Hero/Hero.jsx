@@ -1,4 +1,5 @@
 import React, { useState, useRef, useEffect } from 'react'
+import { Link } from 'react-router-dom'
 import './Hero.css'
 import profileImg from '../../../src/assets/profile-img.jpg'
 
@@ -136,6 +137,7 @@ const Hero = ({ setView }) => {
         <div className="hero-action">
           <a href="#contact" className="hero-connect">Connect</a>
           <button onClick={() => setView('sandbox')} className="hero-sandbox-btn">Security Lab</button>
+          <Link to="/blog" className="hero-connect" style={{ backgroundColor: 'transparent', border: '1px solid var(--primary-color)' }}>Blog</Link>
           <a href="/resume.pdf" target="_blank" rel="noopener noreferrer" className="hero-resume">Resume</a>
         </div>
       </div>

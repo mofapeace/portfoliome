@@ -1,13 +1,15 @@
 import { useState, useEffect } from "react";
+import { useNavigate, useLocation } from "react-router-dom";
 import './navbar.css';
 import Logo from "../../assets/logo.jpg";
 
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faBars, faTimes, faHome, faUser, faFolderOpen, faEnvelope, faBriefcase, faSun, faMoon, faCertificate, faShieldHalved, faBlog } from "@fortawesome/free-solid-svg-icons";
-import { faGithub, faLinkedin } from "@fortawesome/free-brands-svg-icons";
+import { faBars, faTimes, faHome, faUser, faFolderOpen, faEnvelope, faBriefcase, faSun, faMoon, faCertificate } from "@fortawesome/free-solid-svg-icons";
 
 export default function Navbar({ setView, currentView }) {
   const [open, setOpen] = useState(false);
+  const navigate = useNavigate();
+  const location = useLocation();
   const [isLight, setIsLight] = useState(() => {
     const saved = localStorage.getItem('portfolio-theme');
     // Default to 'light' (true) if nothing is saved!
@@ -31,14 +33,6 @@ export default function Navbar({ setView, currentView }) {
   };
 
   useEffect(() => {
-    if (currentView === 'sandbox') {
-      setActiveSection('sandbox');
-      return;
-    }
-    if (currentView === 'blog') {
-      setActiveSection('blog');
-      return;
-    }
     if (currentView === 'all-projects') {
       setActiveSection('projects');
       return;
@@ -81,11 +75,7 @@ export default function Navbar({ setView, currentView }) {
     { id: 'certifications', type: 'anchor', title: 'Certifications', icon: faCertificate },
     { id: 'projects', type: 'anchor', title: 'Projects', icon: faFolderOpen },
     { id: 'services', type: 'anchor', title: 'Services', icon: faBriefcase },
-    { id: 'blog', type: 'view', title: 'Technical Blog', icon: faBlog },
-    { id: 'sandbox', type: 'view', title: 'Security Sandbox', icon: faShieldHalved },
     { id: 'contact', type: 'anchor', title: 'Contact', icon: faEnvelope },
-    { id: 'github', type: 'external', title: 'GitHub', icon: faGithub, url: 'https://github.com/mofapeace' },
-    { id: 'linkedin', type: 'external', title: 'LinkedIn', icon: faLinkedin, url: 'https://www.linkedin.com/in/mofa-godlove-tanyi/' },
   ];
 
   const handleNavClick = (e, item) => {
@@ -96,7 +86,21 @@ export default function Navbar({ setView, currentView }) {
     if (item.type === 'view') {
       setView(item.id);
       setOpen(false);
+      if (location.pathname !== '/') navigate('/');
       window.scrollTo(0, 0);
+      return;
+    }
+
+    if (location.pathname !== '/') {
+      navigate('/');
+      setView('home');
+      setOpen(false);
+      setTimeout(() => {
+        const el = document.getElementById(item.id);
+        if (el) {
+          el.scrollIntoView({ behavior: 'smooth' });
+        }
+      }, 150);
       return;
     }
 
