@@ -9,6 +9,7 @@ import Service from './Components/Services/Service'
 import Contact from './Components/Contact/Contact'
 import Footer from './Components/Footer/Footer'
 import AllProjects from './Components/Projects/AllProjects'
+import DesignGallery from './Components/Projects/DesignGallery'
 import { Analytics } from "@vercel/analytics/react"
 import ScrollToTop from './Components/ScrollToTop/ScrollToTop'
 
@@ -37,6 +38,7 @@ const App = () => {
             </>
           )
         } />
+        <Route path="/design" element={<><DesignGallery /><Footer /></>} />
       </Routes>
       <ScrollToTop />
       <Analytics />

@@ -1,10 +1,12 @@
 import React, { useState } from 'react';
+import { useNavigate } from 'react-router-dom';
 import './Projects.css';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faExternalLinkAlt, faCode, faNetworkWired, faShieldHalved, faLaptopCode, faPalette } from '@fortawesome/free-solid-svg-icons';
 import { faGithub } from '@fortawesome/free-brands-svg-icons';
 
 const Projects = ({ setView }) => {
+  const navigate = useNavigate();
   const [filter, setFilter] = useState('all');
 
   const projectList = [
@@ -46,7 +48,7 @@ const Projects = ({ setView }) => {
       description: 'A curated creative design portfolio showcasing interactive Figma app prototypes, custom company logos, high-resolution vector flyers, and dynamic print-ready branding systems.',
       icon: faPalette,
       github: 'https://github.com/mofapeace',
-      demo: 'https://mofagodlove.vercel.app/'
+      demo: '/design'
     },
     {
       id: 5,
@@ -77,13 +79,22 @@ const Projects = ({ setView }) => {
         <button className={filter === 'dev' ? 'active' : ''} onClick={() => setFilter('dev')}>Development</button>
         <button className={filter === 'security' ? 'active' : ''} onClick={() => setFilter('security')}>Security & Network</button>
         <button className={filter === 'os' ? 'active' : ''} onClick={() => setFilter('os')}>OS Setup</button>
-        <button className={filter === 'design' ? 'active' : ''} onClick={() => setFilter('design')}>UI/UX & Design</button>
+        <button className={filter === 'design' ? 'active' : ''} onClick={() => navigate('/design')}>UI/UX & Design</button>
       </div>
 
       {/* Projects Grid */}
       <div className="projects-grid-showcase">
         {filteredProjects.map(project => (
-          <article className="project-card-showcase" key={project.id}>
+          <article
+            className="project-card-showcase"
+            key={project.id}
+            onClick={(e) => {
+              if (project.category === 'design' && !e.target.closest('a')) {
+                navigate('/design');
+              }
+            }}
+            style={project.category === 'design' ? { cursor: 'pointer' } : undefined}
+          >
             <div className="project-card-header">
               <div className="project-card-icon">
                 <FontAwesomeIcon icon={project.icon} />
