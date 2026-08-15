@@ -1,0 +1,218 @@
+.design-page {
+  display: flex;
+  flex-direction: column;
+  gap: 32px;
+  margin: 48px auto;
+  max-width: 1080px;
+  padding: 24px;
+}
+
+.design-header {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 20px;
+  flex-wrap: wrap;
+}
+
+.design-back-btn {
+  background: rgba(255, 255, 255, 0.05);
+  border: 1px solid rgba(143, 148, 251, 0.12);
+  color: #dfe6ff;
+  padding: 12px 18px;
+  border-radius: 50px;
+  font-weight: 700;
+  cursor: pointer;
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  transition: transform 0.2s ease, border-color 0.2s ease, background 0.2s ease;
+}
+
+.design-back-btn:hover {
+  background: rgba(168, 255, 120, 0.08);
+  border-color: rgba(168, 255, 120, 0.3);
+  transform: translateX(-2px);
+}
+
+.design-heading {
+  flex: 1;
+  min-width: 260px;
+}
+
+.design-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  background: rgba(168, 255, 120, 0.1);
+  color: #a8ff78;
+  padding: 8px 14px;
+  border-radius: 999px;
+  font-size: 13px;
+  font-weight: 700;
+  margin-bottom: 10px;
+}
+
+.design-heading h1 {
+  font-size: 34px;
+  font-weight: 800;
+  margin-bottom: 12px;
+  color: #e7f5ff;
+}
+
+.design-heading p {
+  color: #b7c3d7;
+  line-height: 1.8;
+  max-width: 730px;
+}
+
+.design-section {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.design-section-header h2 {
+  font-size: 24px;
+  font-weight: 800;
+  color: #a8ff78;
+  margin-bottom: 8px;
+}
+
+.design-section-header p {
+  color: #9aa6b3;
+  max-width: 710px;
+}
+
+.design-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: 20px;
+}
+
+.design-card {
+  background: #09101a;
+  border: 1px solid rgba(143, 148, 251, 0.08);
+  border-radius: 20px;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  transition: transform 0.3s ease, box-shadow 0.3s ease, border-color 0.3s ease;
+}
+
+.design-card:hover {
+  transform: translateY(-6px);
+  border-color: rgba(168, 255, 120, 0.25);
+  box-shadow: 0 18px 40px rgba(0, 0, 0, 0.35);
+}
+
+.design-card-preview {
+  min-height: 220px;
+  position: relative;
+  background: linear-gradient(135deg, rgba(168,255,120,0.18), rgba(143,148,251,0.18));
+  display: flex;
+  align-items: flex-end;
+  justify-content: center;
+}
+
+.design-card-preview img {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+.design-card-image-links {
+  position: absolute;
+  right: 12px;
+  top: 12px;
+  display: flex;
+  gap: 8px;
+  z-index: 10;
+}
+.design-card-image-links a {
+  background: rgba(0,0,0,0.45);
+  color: #fff;
+  padding: 8px;
+  border-radius: 8px;
+}
+
+.design-card-overlay {
+  width: 100%;
+  padding: 18px;
+  background: linear-gradient(180deg, transparent 0%, rgba(5, 8, 18, 0.9) 100%);
+  display: flex;
+  justify-content: center;
+}
+
+.design-card-overlay span {
+  color: #ffffff;
+  font-weight: 700;
+  letter-spacing: 0.02em;
+}
+
+.design-card-body {
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.design-card-body h3 {
+  color: #ffffff;
+  font-size: 18px;
+  font-weight: 700;
+}
+
+.design-card-body p {
+  color: #9aa6b3;
+  line-height: 1.7;
+  font-size: 14px;
+}
+
+@media (max-width: 1080px) {
+  .design-page {
+    margin: 32px 18px;
+    padding: 16px;
+  }
+
+  .design-header {
+    flex-direction: column;
+    align-items: stretch;
+  }
+}
+
+body.light-mode .design-back-btn {
+  background: #ffffff;
+  border-color: rgba(0, 0, 0, 0.08);
+  color: #334155;
+}
+
+body.light-mode .design-back-btn:hover {
+  background: #f1f5f9;
+}
+
+body.light-mode .design-heading h1 {
+  color: #0f172a;
+}
+
+body.light-mode .design-heading p,
+body.light-mode .design-section-header p,
+body.light-mode .design-card-body p {
+  color: #475569;
+}
+
+body.light-mode .design-card {
+  background: #ffffff;
+  border-color: rgba(0, 0, 0, 0.08);
+}
+
+body.light-mode .design-card-overlay {
+  background: linear-gradient(180deg, transparent 0%, rgba(241, 245, 249, 0.95) 100%);
+}
+
+body.light-mode .design-card-overlay span {
+  color: #0f172a;
+}

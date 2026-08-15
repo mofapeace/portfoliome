@@ -9,16 +9,31 @@ import Service from './Components/Services/Service'
 import Contact from './Components/Contact/Contact'
 import Footer from './Components/Footer/Footer'
 import AllProjects from './Components/Projects/AllProjects'
+import SecuritySandbox from './Components/Sandbox/SecuritySandbox'
+import BlogList from './Components/Blog/BlogList'
+import BlogPost from './Components/Blog/BlogPost'
 import { Analytics } from "@vercel/analytics/react"
 import ScrollToTop from './Components/ScrollToTop/ScrollToTop'
 
 const App = () => {
-  const [view, setView] = useState('home'); // 'home' or 'all-projects'
+  const [view, setView] = useState('home'); // 'home', 'all-projects', or 'sandbox'
 
   return (
     <div>
       <Navbar setView={setView} currentView={view} />
       <Routes>
+        <Route path="/blog" element={
+          <>
+            <BlogList setView={setView} />
+            <Footer />
+          </>
+        } />
+        <Route path="/blog/:id" element={
+          <>
+            <BlogPost setView={setView} />
+            <Footer />
+          </>
+        } />
         <Route path="/" element={
           view === 'home' ? (
             <>
@@ -30,9 +45,14 @@ const App = () => {
               <Contact />
               <Footer />
             </>
-          ) : (
+          ) : view === 'all-projects' ? (
             <>
               <AllProjects setView={setView} />
+              <Footer />
+            </>
+          ) : (
+            <>
+              <SecuritySandbox setView={setView} />
               <Footer />
             </>
           )
@@ -42,6 +62,7 @@ const App = () => {
       <Analytics />
     </div>
   )
+}
 }
 
 export default App
