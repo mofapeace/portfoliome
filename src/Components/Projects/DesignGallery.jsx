@@ -11,9 +11,11 @@ const sections = [
     title: 'Logo Design',
     subtitle: 'Clean, memorable brandmarks and identity systems for businesses, teams, and products.',
     items: [
-      { label: 'Logo 01', description: 'Minimal brandmark for a creative studio.', image: new URL('../../assets/logos/Netaura.png', import.meta.url).href, demo: 'https://mofagodlove.vercel.app/', github: 'https://github.com/mofapeace' },
-      { label: 'Logo 02', description: 'Tech-inspired mark for a digital consulting brand.', image: new URL('../../assets/logos/Psudo.jpg', import.meta.url).href, demo: 'https://mofagodlove.vercel.app/', github: 'https://github.com/mofapeace' },
-      { label: 'Logo 03', description: 'Modern geometric entity for an app launch.', image: new URL('../../assets/logos/ringspace.png', import.meta.url).href, demo: '#', github: 'https://github.com/mofapeace' },
+      { label: 'Netaura', description: 'Minimal brandmark for a creative studio.', image: new URL('../../assets/logos/Netaura.png', import.meta.url).href, demo: 'https://mofagodlove.vercel.app/', github: 'https://github.com/mofapeace' },
+      { label: 'Psudo', description: 'Tech-inspired mark for a digital consulting brand.', image: new URL('../../assets/logos/Psudo.jpg', import.meta.url).href, demo: 'https://mofagodlove.vercel.app/', github: 'https://github.com/mofapeace' },
+      { label: 'Ringspace', description: 'Modern geometric entity for an app launch.', image: new URL('../../assets/logos/ringspace.png', import.meta.url).href, demo: '#', github: 'https://github.com/mofapeace' },
+      { label: 'Ringspace (no-bg)', description: 'Transparent variant for flexible placements.', image: new URL('../../assets/logos/ringspacenobg.png', import.meta.url).href, demo: '#', github: 'https://github.com/mofapeace' },
+      { label: 'Random32', description: 'Experimental mark and color study.', image: new URL('../../assets/logos/random32.png', import.meta.url).href, demo: '#', github: 'https://github.com/mofapeace' },
     ],
   },
   {
