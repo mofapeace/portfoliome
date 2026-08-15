@@ -46,7 +46,8 @@ const Projects = ({ setView }) => {
       description: 'A curated creative design portfolio showcasing interactive Figma app prototypes, custom company logos, high-resolution vector flyers, and dynamic print-ready branding systems.',
       icon: faPalette,
       github: 'https://github.com/mofapeace',
-      demo: 'https://mofagodlove.vercel.app/'
+      demo: 'https://mofagodlove.vercel.app/',
+      image: new URL('../../assets/logos/Netaura.png', import.meta.url).href
     },
     {
       id: 5,
@@ -85,21 +86,41 @@ const Projects = ({ setView }) => {
         {filteredProjects.map(project => (
           <article className="project-card-showcase" key={project.id}>
             <div className="project-card-header">
-              <div className="project-card-icon">
-                <FontAwesomeIcon icon={project.icon} />
-              </div>
-              <div className="project-card-links">
-                {project.github && (
-                  <a href={project.github} target="_blank" rel="noopener noreferrer" aria-label="GitHub Repository">
-                    <FontAwesomeIcon icon={faGithub} />
-                  </a>
-                )}
-                {project.demo && project.demo !== '#' && (
-                  <a href={project.demo} target="_blank" rel="noopener noreferrer" aria-label="Live Demo">
-                    <FontAwesomeIcon icon={faExternalLinkAlt} />
-                  </a>
-                )}
-              </div>
+              {project.image ? (
+                <div className="project-card-media">
+                  <img src={project.image} alt={project.title} />
+                  <div className="project-card-links image-links">
+                    {project.github && (
+                      <a href={project.github} target="_blank" rel="noopener noreferrer" aria-label="GitHub Repository">
+                        <FontAwesomeIcon icon={faGithub} />
+                      </a>
+                    )}
+                    {project.demo && project.demo !== '#' && (
+                      <a href={project.demo} target="_blank" rel="noopener noreferrer" aria-label="Live Demo">
+                        <FontAwesomeIcon icon={faExternalLinkAlt} />
+                      </a>
+                    )}
+                  </div>
+                </div>
+              ) : (
+                <>
+                  <div className="project-card-icon">
+                    <FontAwesomeIcon icon={project.icon} />
+                  </div>
+                  <div className="project-card-links">
+                    {project.github && (
+                      <a href={project.github} target="_blank" rel="noopener noreferrer" aria-label="GitHub Repository">
+                        <FontAwesomeIcon icon={faGithub} />
+                      </a>
+                    )}
+                    {project.demo && project.demo !== '#' && (
+                      <a href={project.demo} target="_blank" rel="noopener noreferrer" aria-label="Live Demo">
+                        <FontAwesomeIcon icon={faExternalLinkAlt} />
+                      </a>
+                    )}
+                  </div>
+                </>
+              )}
             </div>
 
             <div className="project-card-body">
